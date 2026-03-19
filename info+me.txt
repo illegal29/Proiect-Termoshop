@@ -1,0 +1,7 @@
+(HTML + CSS)
+un fișier index.html
+un fișier styles.css
+git add .           # „bagă toate modificările în coadă”
+git commit -m "msg" # „salvează versiunea cu mesaj”
+git push            # „urcă pe GitHub”
+git pull            # „descarcă modificări de pe GitHub”
