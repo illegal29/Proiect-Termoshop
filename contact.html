@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — TermoShop</title>
+  <meta name="description" content="Contacteaza-ne pentru consultanta gratuita. Raspundem in maxim 2 ore. Telefon, email sau formular online.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Termo<span>Shop</span></a>
+      <button class="navbar-toggle" aria-label="Meniu" onclick="document.querySelector('.navbar-links').classList.toggle('open')">☰</button>
+      <ul class="navbar-links">
+        <li><a href="index.html">Acasa</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="informatii-utile.html">Informatii utile</a></li>
+        <li><a href="ghid.html">Ghid</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="navbar-cta">Cere consultanta</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hai sa discutam despre <span>proiectul tau</span></h1>
+      <p>Completeaza formularul sau suna-ne direct — raspundem in maxim 2 ore.</p>
+    </div>
+  </section>
+
+  <!-- Contact Info Cards -->
+  <section style="background-color: #FFF8F0; padding: 60px 20px;">
+    <div class="container">
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+          <div class="icon">📞</div>
+          <h4>Telefon</h4>
+          <a href="tel:+40775175897">0775 175 897</a>
+        </div>
+        <div class="contact-info-card">
+          <div class="icon">✉️</div>
+          <h4>Email</h4>
+          <a href="mailto:ovidiucristiand@gmail.com">ovidiucristiand@gmail.com</a>
+        </div>
+        <div class="contact-info-card">
+          <div class="icon">⏰</div>
+          <h4>Raspundem in</h4>
+          <p>Maxim 2 ore</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formular Contact -->
+  <section class="formular" id="formular">
+    <div class="container">
+      <h2 class="section-title">Spune-ne ce ai nevoie</h2>
+      <p class="section-subtitle">Completeaza formularul si te contactam noi. Consultanta e gratuita si fara obligatii.</p>
+
+      <div class="form-container">
+        <form id="contact-form">
+          <!-- Nume, Telefon, Email -->
+          <label for="nume">Nume *</label>
+          <input type="text" id="nume" name="nume" placeholder="Numele tau" required>
+
+          <div class="form-row">
+            <div>
+              <label for="telefon">Telefon *</label>
+              <input type="tel" id="telefon" name="telefon" placeholder="07XX XXX XXX" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="email@exemplu.ro">
+            </div>
+          </div>
+
+          <!-- Produs dorit (carduri simple per categorie) -->
+          <div class="product-cards-group">
+            <div class="checkbox-group-title">Ce te intereseaza?</div>
+            <div class="product-cards">
+              <label class="product-card">
+                <input type="checkbox" name="produs" value="centrale-termice">
+                <span class="product-card-icon">🔥</span>
+                <span class="product-card-label">Centrale termice</span>
+              </label>
+              <label class="product-card">
+                <input type="checkbox" name="produs" value="cazane-sobe">
+                <span class="product-card-icon">🪵</span>
+                <span class="product-card-label">Cazane & Sobe</span>
+              </label>
+              <label class="product-card">
+                <input type="checkbox" name="produs" value="climatizare">
+                <span class="product-card-icon">❄️</span>
+                <span class="product-card-label">Climatizare</span>
+              </label>
+              <label class="product-card">
+                <input type="checkbox" name="produs" value="incalzire-pardoseala">
+                <span class="product-card-icon">🌡️</span>
+                <span class="product-card-label">Incalzire pardoseala</span>
+              </label>
+              <label class="product-card">
+                <input type="checkbox" name="produs" value="pompe-caldura">
+                <span class="product-card-icon">♨️</span>
+                <span class="product-card-label">Pompe de caldura</span>
+              </label>
+              <label class="product-card">
+                <input type="checkbox" name="produs" value="nu-stiu">
+                <span class="product-card-icon">✏️</span>
+                <span class="product-card-label">Nu stiu / Vreau sfat</span>
+              </label>
+            </div>
+            <p style="text-align:center; margin-top:12px; font-size:0.85rem; color:#636E72;">
+              Nu stii ce sa alegi? <a href="ghid.html" style="color:#E8732A; font-weight:600;">Completeaza ghidul nostru interactiv →</a>
+            </p>
+          </div>
+
+          <!-- Campuri extra -->
+          <div class="form-row">
+            <div>
+              <label for="suprafata">Suprafata casei (m²)</label>
+              <input type="number" id="suprafata" name="suprafata" placeholder="ex: 120">
+            </div>
+            <div>
+              <label for="camere">Numar camere</label>
+              <input type="number" id="camere" name="camere" placeholder="ex: 4">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="izolatie">Tip izolatie</label>
+              <select id="izolatie" name="izolatie">
+                <option value="">Selecteaza...</option>
+                <option value="buna">Buna (termosistem)</option>
+                <option value="medie">Medie</option>
+                <option value="fara">Fara izolatie</option>
+                <option value="nustiu">Nu stiu</option>
+              </select>
+            </div>
+            <div>
+              <label for="montaj">Doresti montaj?</label>
+              <select id="montaj" name="montaj">
+                <option value="">Selecteaza...</option>
+                <option value="da">Da</option>
+                <option value="nu">Nu</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="detalii">Detalii suplimentare</label>
+          <textarea id="detalii" name="detalii" placeholder="Spune-ne mai multe despre ce ai nevoie..."></textarea>
+
+          <button type="submit" class="btn-primary" style="width:100%; margin-top:8px;">Trimite cererea</button>
+        </form>
+
+        <!-- Confirmare (ascunsa initial) -->
+        <div id="form-success" style="display:none; text-align:center; padding:40px 0;">
+          <div style="font-size:3rem; margin-bottom:16px;">✅</div>
+          <h3>Cererea ta a fost trimisa!</h3>
+          <p style="margin-top:12px; color:#636E72;">Codul tau de referinta: <strong id="lead-code"></strong></p>
+          <p style="color:#636E72;">Te contactam in maxim 2 ore. Multumim!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recenzii -->
+  <section style="background-color: #FFFFFF; padding: 60px 20px;">
+    <div class="container">
+      <h2 class="section-title">Ce spun clientii nostri</h2>
+      <p class="section-subtitle">Feedback real de la oameni pe care i-am ajutat sa aleaga solutia potrivita.</p>
+      <div class="cards" style="max-width:900px; margin:0 auto;">
+        <div class="card">
+          <p style="font-style:italic; color:#636E72; margin-bottom:16px;">"Nu aveam idee ce centrala sa aleg. Mi-au explicat totul pe intelesul meu si am primit oferta in aceeasi zi. Recomand!"</p>
+          <p style="font-weight:600; color:#2D3436;">— Andrei M., Iasi</p>
+        </div>
+        <div class="card">
+          <p style="font-style:italic; color:#636E72; margin-bottom:16px;">"Am apreciat ca nu m-au presat sa cumpar. Mi-au dat mai multe optiuni si am ales in liniste. Montajul a decurs perfect."</p>
+          <p style="font-weight:600; color:#2D3436;">— Maria D., Bucuresti</p>
+        </div>
+        <div class="card">
+          <p style="font-style:italic; color:#636E72; margin-bottom:16px;">"Pretul a fost exact cat mi-au spus — fara surprize. Centrala functioneaza impecabil de 3 luni."</p>
+          <p style="font-weight:600; color:#2D3436;">— Ioan P., Cluj</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Maps placeholder -->
+  <section style="background-color: #FFF8F0; padding: 60px 20px;">
+    <div class="container">
+      <h2 class="section-title">Unde ne gasesti</h2>
+      <p class="section-subtitle">Acoperire nationala prin parteneri in toata Romania.</p>
+      <div style="max-width:800px; margin:0 auto; background:#FFFFFF; border-radius:16px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <div style="background:#E8E8E8; height:350px; display:flex; align-items:center; justify-content:center; color:#636E72; font-size:1.1rem;">
+          Harta Google Maps — va fi integrata in curand
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color: #FFFFFF; padding: 60px 20px;">
+    <div class="container">
+      <h2 class="section-title">Intrebari frecvente</h2>
+      <p class="section-subtitle">Raspunsuri rapide la cele mai comune intrebari.</p>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">Costa consultanta?</button>
+          <div class="faq-answer">
+            <p>Nu, consultanta e 100% gratuita si fara obligatii. Analizam nevoile tale, iti recomandam solutia potrivita, si tu decizi daca mergi mai departe. Fara presiune, fara costuri ascunse.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Cat dureaza pana primesc oferta?</button>
+          <div class="faq-answer">
+            <p>De obicei in aceeasi zi sau maxim 24 de ore. Depinde de complexitatea cererii, dar facem tot posibilul sa raspundem cat mai rapid.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Livrati in toata tara?</button>
+          <div class="faq-answer">
+            <p>Da, lucram cu parteneri care livreaza oriunde in Romania. Indiferent de oras, gasim solutia logistica potrivita.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Trebuie sa stiu ce centrala vreau?</button>
+          <div class="faq-answer">
+            <p>Nu! Exact pentru asta suntem noi aici — te ghidam sa alegi solutia potrivita. Spune-ne despre casa ta si noi ne ocupam de rest.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Gata sa faci primul pas?</h2>
+      <p>Suna-ne, scrie-ne sau completeaza formularul — raspundem in maxim 2 ore.</p>
+      <a href="#formular" class="btn-primary">Completeaza formularul</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>TermoShop</h4>
+        <p>Experti in incalzire si climatizare langa tine. Consultanta gratuita si intermediere pentru centrale termice.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Pagini</h4>
+        <ul>
+          <li><a href="index.html">Acasa</a></li>
+          <li><a href="servicii.html">Servicii</a></li>
+          <li><a href="informatii-utile.html">Informatii utile</a></li>
+          <li><a href="ghid.html">Ghid</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+40775175897">0775 175 897</a><br>
+          <a href="mailto:ovidiucristiand@gmail.com">ovidiucristiand@gmail.com</a>
+        </p>
+        <p style="margin-top: 12px;">Ovidiu Cristian Diaconu</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 TermoShop. Toate drepturile rezervate.
+    </div>
+  </footer>
+
+  <!-- Contact Form JavaScript -->
+  <script>
+    // Validare Nume - doar litere si spatii (inclusiv diacritice)
+    document.getElementById('nume').addEventListener('input', function() {
+      this.value = this.value.replace(/[^a-zA-ZăâîșțĂÂÎȘȚ\s]/g, '');
+    });
+
+    // Validare Telefon - doar cifre
+    document.getElementById('telefon').addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        // Inchide celelalte
+        document.querySelectorAll('.faq-item').forEach(function(other) {
+          if (other !== item) other.classList.remove('open');
+        });
+        item.classList.toggle('open');
+      });
+    });
+
+    // Form submission — genereaza cod unic si arata confirmare
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Genereaza cod unic TS-YYYY-MMDD-XXXX
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = String(now.getMonth() + 1).padStart(2, '0');
+      var day = String(now.getDate()).padStart(2, '0');
+      var rand = String(Math.floor(1000 + Math.random() * 9000));
+      var code = 'TS-' + year + '-' + month + day + '-' + rand;
+
+      // Arata confirmarea
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('lead-code').textContent = code;
+
+      // Viitor: aici se va trimite datele catre webhook N8N
+      // fetch('https://n8n.example.com/webhook/termoshop', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ code: code, ...formData })
+      // });
+    });
+  </script>
+
+</body>
+</html>

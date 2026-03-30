@@ -5,3 +5,10 @@ git add .           # „bagă toate modificările în coadă”
 git commit -m "msg" # „salvează versiunea cu mesaj”
 git push            # „urcă pe GitHub”
 git pull            # „descarcă modificări de pe GitHub”
+
+SKILLS = Super-puteri pentru agenți
+
+
+→ Cum să dai agenților ABILITĂȚI NOI
+→ Cum să creezi SKILLS custom
+→ Cum să scalezi la INFINIT

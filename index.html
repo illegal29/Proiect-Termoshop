@@ -3,117 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TermoShop — Consultanță & Intermediere Centrale Termice</title>
+  <title>TermoShop — Experți în Încălzire și Climatizare</title>
+  <meta name="description" content="Consultanță gratuită și intermediere pentru centrale termice, cazane, pompe de căldură și climatizare. Te ghidăm de la alegere până la montaj.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <h1>termoshop</h1>
-    <p class="header-subtitle">EXPERȚI ÎN SOLUȚII DE TOP</p>
-    <p>Consultanță și intermediere pentru centrale termice — te ajutăm să alegi soluția perfectă pentru casa ta.</p>
-  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Termo<span>Shop</span></a>
+      <button class="navbar-toggle" aria-label="Meniu" onclick="document.querySelector('.navbar-links').classList.toggle('open')">☰</button>
+      <ul class="navbar-links">
+        <li><a href="index.html" class="active">Acasă</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="informatii-utile.html">Informatii utile</a></li>
+        <li><a href="ghid.html">Ghid</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="navbar-cta">Cere consultanță</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Experți în <span>încălzire și climatizare</span> lângă tine</h1>
+      <p>Consultanță gratuită și intermediere pentru centrale termice — te ghidăm de la alegere până la montaj.</p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn-primary">Vreau consultanță gratuită</a>
+        <a href="#cum-lucram" class="btn-secondary">Cum funcționează?</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Beneficii -->
   <section class="beneficii">
-    <h2 class="section-title">De ce să alegi TermoShop?</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">🔍</div>
-        <h3>Consultanță personalizată</h3>
-        <p>Analizăm nevoile tale și îți recomandăm centrala termică potrivită pentru locuința ta.</p>
-      </div>
-      <div class="card">
-        <div class="icon">💰</div>
-        <h3>Prețuri competitive</h3>
-        <p>Intermediem oferte de la furnizori de încredere, astfel încât să obții cel mai bun raport calitate-preț.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🔧</div>
-        <h3>Montaj prin instalatori profesioniști</h3>
-        <p>Ai posibilitatea să alegi montajul — te punem în legătură cu un instalator profesionist cu care colaborăm.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>Suport complet</h3>
-        <p>Te însoțim pe tot parcursul procesului, de la alegerea centralei până la punerea ei în funcțiune.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cum lucrăm -->
-  <section class="cum-lucram">
-    <h2 class="section-title">Cum lucrăm?</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Ne contactezi</h3>
-        <p>Completezi formularul de mai jos sau ne suni direct pentru a discuta cerințele tale.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Evaluăm & Recomandăm</h3>
-        <p>Analizăm situația ta și îți propunem cele mai bune opțiuni de centrale termice.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Primești oferta</h3>
-        <p>Îți prezentăm oferta detaliată cu preț, specificații și termene de livrare.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Livrare & Montaj</h3>
-        <p>Centrala ajunge la tine, iar dacă dorești, te conectăm cu un instalator profesionist pentru montaj.</p>
+    <div class="container">
+      <h2 class="section-title">De ce să alegi TermoShop?</h2>
+      <p class="section-subtitle">Te ajutăm să faci alegerea potrivită, fără stres și fără costuri ascunse.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>Consultanță gratuită</h3>
+          <p>Nu știi ce centrală ți se potrivește? Te ajutăm noi, fără obligații.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3>Prețuri transparente</h3>
+          <p>Primești ofertă detaliată, fără costuri ascunse.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔧</div>
+          <h3>Montaj profesionist</h3>
+          <p>Te conectăm cu instalatori verificați din zona ta.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⭐</div>
+          <h3>Produse exclusive</h3>
+          <p>Lucrăm cu branduri precum Warmline, Tis, Neus, Almax, Kronas.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Formular cerere ofertă -->
-  <section class="formular">
-    <h2 class="section-title">Cere o ofertă</h2>
-    <div class="form-container">
-      <form action="#" method="POST" onsubmit="return false;">
-        <label for="nume">Nume complet</label>
-        <input type="text" id="nume" name="nume" placeholder="Ex: Ion Popescu" required>
+  <!-- Cum funcționează -->
+  <section class="cum-lucram" id="cum-lucram">
+    <div class="container">
+      <h2 class="section-title">Cum funcționează?</h2>
+      <p class="section-subtitle">4 pași simpli de la prima întrebare până la casa caldă.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Ne contactezi</h3>
+          <p>Completezi formularul sau ne suni direct pentru a discuta nevoile tale.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Evaluăm împreună</h3>
+          <p>Discutăm despre suprafața casei, tipul de izolație și preferințele tale.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Primești oferta</h3>
+          <p>Ofertă personalizată cu opțiuni și prețuri clare, fără surprize.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Livrare & Montaj</h3>
+          <p>Centrala ajunge la tine, iar dacă dorești, te conectăm cu un instalator.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <label for="telefon">Telefon</label>
-        <input type="tel" id="telefon" name="telefon" placeholder="07XX XXX XXX" required>
+  <!-- Social Proof — Branduri -->
+  <section class="social-proof">
+    <div class="container">
+      <h2 class="section-title">Branduri de încredere</h2>
+      <p class="section-subtitle">Lucrăm cu producători verificați pentru a-ți oferi calitate garantată.</p>
+      <div class="brands-grid">
+        <span class="brand-item">Warmline</span>
+        <span class="brand-item">Tis</span>
+        <span class="brand-item">Neus</span>
+        <span class="brand-item">Almax</span>
+        <span class="brand-item">Kronas</span>
+      </div>
+    </div>
+  </section>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="exemplu@email.com">
+  <!-- Urmărește-ne -->
+  <section class="social-media">
+    <div class="container">
+      <h2 class="section-title">Vezi cum lucrăm</h2>
+      <p class="section-subtitle">Urmărește-ne pe rețelele sociale pentru sfaturi, prezentări de produse și noutăți.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" target="_blank" rel="noopener">📘 Facebook</a>
+        <a href="#" class="social-link" target="_blank" rel="noopener">🎵 TikTok</a>
+        <a href="#" class="social-link" target="_blank" rel="noopener">📸 Instagram</a>
+      </div>
+    </div>
+  </section>
 
-        <label for="tip-centrala">Tip centrală dorită</label>
-        <select id="tip-centrala" name="tip-centrala">
-          <option value="">— Selectează —</option>
-          <option value="condensare">Centrală cu condensare</option>
-          <option value="clasica">Centrală clasică</option>
-          <option value="electrica">Centrală electrică</option>
-          <option value="nu-stiu">Nu știu încă — vreau consultanță</option>
-        </select>
-
-        <label for="montaj">Dorești montaj?</label>
-        <select id="montaj" name="montaj">
-          <option value="">— Selectează —</option>
-          <option value="da">Da, doresc montaj</option>
-          <option value="nu">Nu, doar centrala</option>
-        </select>
-
-        <label for="mesaj">Mesaj / Detalii suplimentare</label>
-        <textarea id="mesaj" name="mesaj" placeholder="Spune-ne mai multe despre ce ai nevoie..."></textarea>
-
-        <button type="submit" class="btn-submit">Trimite cererea</button>
-      </form>
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Pregătit să faci primul pas?</h2>
+      <p>Lasă-ne datele tale și te contactăm noi în maxim 2 ore. Gratuit, fără obligații.</p>
+      <a href="contact.html" class="btn-primary">Vreau consultanță gratuită</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="contact-name">Ovidiu Cristian Diaconu</div>
-    <div class="contact-info">
-      <a href="mailto:ovidiu.cristian@termoshop.ro">ovidiu.cristian@termoshop.ro</a><br>
-      <a href="tel:+40775175897">0775 175 897</a>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>TermoShop</h4>
+        <p>Experți în încălzire și climatizare lângă tine. Consultanță gratuită și intermediere pentru centrale termice.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Pagini</h4>
+        <ul>
+          <li><a href="index.html">Acasă</a></li>
+          <li><a href="servicii.html">Servicii</a></li>
+          <li><a href="informatii-utile.html">Informatii utile</a></li>
+          <li><a href="ghid.html">Ghid</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+40775175897">0775 175 897</a><br>
+          <a href="mailto:ovidiucristiand@gmail.com">ovidiucristiand@gmail.com</a>
+        </p>
+        <p style="margin-top: 12px;">Ovidiu Cristian Diaconu</p>
+      </div>
     </div>
-    <div class="copyright">&copy; 2026 TermoShop. Toate drepturile rezervate.</div>
+    <div class="footer-bottom">
+      &copy; 2026 TermoShop. Toate drepturile rezervate.
+    </div>
   </footer>
 
 </body>

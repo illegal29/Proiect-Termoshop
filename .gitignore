@@ -1,0 +1,6 @@
+# Claude Code files
+.claude/
+
+# Skill pack files
+Skill pack*/
+*.zip

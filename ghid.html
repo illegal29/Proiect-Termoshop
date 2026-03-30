@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghid — Gaseste solutia potrivita | TermoShop</title>
+  <meta name="description" content="Raspunde la cateva intrebari simple si primesti o recomandare personalizata pentru incalzire, climatizare sau pompe de caldura. Ghid interactiv TermoShop.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Termo<span>Shop</span></a>
+      <button class="navbar-toggle" aria-label="Meniu" onclick="document.querySelector('.navbar-links').classList.toggle('open')">&#9776;</button>
+      <ul class="navbar-links">
+        <li><a href="index.html">Acasa</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="informatii-utile.html">Informatii utile</a></li>
+        <li><a href="ghid.html" class="active">Ghid</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="navbar-cta">Cere consultanta</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Gaseste <span>solutia potrivita</span> pentru casa ta</h1>
+      <p>Raspunde la cateva intrebari si primesti o recomandare + oferta personalizata</p>
+    </div>
+  </section>
+
+  <!-- HUB — 6 Category Cards -->
+  <section class="ghid-hub" id="hub-categorii">
+    <div class="container">
+      <h2 class="section-title">Ce te intereseaza?</h2>
+      <p class="section-subtitle">Alege o categorie si raspunde la cateva intrebari simple. Iti spunem exact ce ti se potriveste.</p>
+      <div class="product-cards">
+        <div class="product-card" onclick="openCategory('centrale')" id="hub-card-centrale">
+          <span class="product-card-icon">&#128293;</span>
+          <span class="product-card-label">Centrale termice</span>
+          <span class="product-card-desc">Solutia principala de incalzire, pe gaz, electric sau cu pompa</span>
+        </div>
+        <div class="product-card" onclick="openCategory('cazane')" id="hub-card-cazane">
+          <span class="product-card-icon">&#129717;</span>
+          <span class="product-card-label">Cazane &amp; Sobe</span>
+          <span class="product-card-desc">Lemne, peleti, seminee — ideal daca ai acces la combustibil solid</span>
+        </div>
+        <div class="product-card" onclick="openCategory('climatizare')" id="hub-card-climatizare">
+          <span class="product-card-icon">&#10052;&#65039;</span>
+          <span class="product-card-label">Climatizare</span>
+          <span class="product-card-desc">Aer conditionat, racire, incalzire prin split</span>
+        </div>
+        <div class="product-card" onclick="openCategory('pardoseala')" id="hub-card-pardoseala">
+          <span class="product-card-icon">&#127777;&#65039;</span>
+          <span class="product-card-label">Incalzire in pardoseala</span>
+          <span class="product-card-desc">Confort uniform in toata casa</span>
+        </div>
+<div class="product-card" onclick="openCategory('pompe')" id="hub-card-pompe">
+          <span class="product-card-icon">&#9832;&#65039;</span>
+          <span class="product-card-label">Pompe de caldura</span>
+          <span class="product-card-desc">Eficienta maxima, economie pe termen lung</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORY SECTIONS ==================== -->
+
+  <!-- Centrale termice -->
+  <section class="ghid-category-section" id="section-centrale">
+    <div class="container">
+      <h2 class="section-title">&#128293; Centrale termice</h2>
+      <div class="ghid-intro">
+        <p>Centrala termica e echipamentul principal care iti incalzeste casa si, de obicei, iti furnizeaza si apa calda. Functioneaza pe gaz, electric sau cu pompa de caldura. Alegerea potrivita depinde de tipul locuintei, suprafata si accesul la gaz. Raspunde la 5 intrebari si iti spunem ce ti se potriveste.</p>
+      </div>
+      <div class="wizard-container" id="wizard-centrale">
+        <div class="wizard-progress">
+          <div class="wizard-dot active"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+        </div>
+        <!-- Step 1 -->
+        <div class="wizard-step active" data-step="0">
+          <div class="wizard-question">Ce tip de locuinta ai?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="locuinta" data-value="Apartament">Apartament</button>
+            <button class="wizard-option" data-key="locuinta" data-value="Casa">Casa</button>
+            <button class="wizard-option" data-key="locuinta" data-value="Vila">Vila</button>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="wizard-step" data-step="1" data-input-step="true">
+          <div class="wizard-question">Care este suprafata locuintei?</div>
+          <div class="wizard-input-wrap">
+            <input type="number" class="wizard-input-field" id="input-centrale-suprafata" min="10" max="2000" placeholder="Ex: 120">
+            <span class="wizard-input-unit">m²</span>
+          </div>
+          <button class="wizard-input-next btn-primary" data-key="suprafata" data-wizard="centrale">Continua</button>
+        </div>
+        <!-- Step 3 -->
+        <div class="wizard-step" data-step="2">
+          <div class="wizard-question">Cum este structurata locuinta?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="structura" data-value="Parter">Parter</button>
+            <button class="wizard-option" data-key="structura" data-value="Parter + Mansarda">Parter + Mansarda</button>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="wizard-step" data-step="3">
+          <div class="wizard-question">Ai racord la gaz?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="gaz" data-value="Da">Da</button>
+            <button class="wizard-option" data-key="gaz" data-value="Nu">Nu</button>
+            <button class="wizard-option" data-key="gaz" data-value="Nu stiu">Nu stiu</button>
+          </div>
+        </div>
+        <!-- Step 5 -->
+        <div class="wizard-step" data-step="4">
+          <div class="wizard-question">Ce tip de izolatie are casa?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="izolatie" data-value="Buna (termosistem)">Buna (termosistem)</button>
+            <button class="wizard-option" data-key="izolatie" data-value="Medie">Medie</button>
+            <button class="wizard-option" data-key="izolatie" data-value="Fara izolatie">Fara izolatie</button>
+            <button class="wizard-option" data-key="izolatie" data-value="Nu stiu">Nu stiu</button>
+          </div>
+        </div>
+        <!-- Step 6 -->
+        <div class="wizard-step" data-step="5">
+          <div class="wizard-question">Ai nevoie si de apa calda de la centrala?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="apa_calda" data-value="Da">Da</button>
+            <button class="wizard-option" data-key="apa_calda" data-value="Nu">Nu</button>
+            <button class="wizard-option" data-key="apa_calda" data-value="Nu stiu">Nu stiu</button>
+          </div>
+        </div>
+        <!-- Result -->
+        <div class="wizard-step" data-step="result">
+          <div class="wizard-result" id="result-centrale"></div>
+        </div>
+        <!-- Nav -->
+        <div class="wizard-nav">
+          <button class="btn-secondary wizard-back-btn" style="visibility:hidden;">Inapoi</button>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cazane & Sobe -->
+  <section class="ghid-category-section" id="section-cazane">
+    <div class="container">
+      <h2 class="section-title">&#129717; Cazane &amp; Sobe</h2>
+      <div class="ghid-intro">
+        <p>Cazanele pe lemne si peleti sunt o alegere excelenta daca ai acces la combustibil solid. Costul pe termen lung e redus, iar modelele moderne au randament ridicat. Sobele si semineele adauga si un element decorativ casei. Hai sa vedem ce ti se potriveste.</p>
+      </div>
+      <div class="wizard-container" id="wizard-cazane">
+        <div class="wizard-progress">
+          <div class="wizard-dot active"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+        </div>
+        <!-- Step 1 -->
+        <div class="wizard-step active" data-step="0">
+          <div class="wizard-question">Ce tip de locuinta ai?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="locuinta" data-value="Apartament">Apartament</button>
+            <button class="wizard-option" data-key="locuinta" data-value="Casa">Casa</button>
+            <button class="wizard-option" data-key="locuinta" data-value="Vila">Vila</button>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="wizard-step" data-step="1" data-input-step="true">
+          <div class="wizard-question">Care este suprafata locuintei?</div>
+          <div class="wizard-input-wrap">
+            <input type="number" class="wizard-input-field" id="input-cazane-suprafata" min="10" max="2000" placeholder="Ex: 120">
+            <span class="wizard-input-unit">m²</span>
+          </div>
+          <button class="wizard-input-next btn-primary" data-key="suprafata" data-wizard="cazane">Continua</button>
+        </div>
+        <!-- Step 3 -->
+        <div class="wizard-step" data-step="2">
+          <div class="wizard-question">Cum este structurata locuinta?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="structura" data-value="Parter">Parter</button>
+            <button class="wizard-option" data-key="structura" data-value="Parter + Mansarda">Parter + Mansarda</button>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="wizard-step" data-step="3">
+          <div class="wizard-question">Ce combustibil ai acces usor?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="combustibil" data-value="Lemne">Lemne</button>
+            <button class="wizard-option" data-key="combustibil" data-value="Peleti">Peleti</button>
+            <button class="wizard-option" data-key="combustibil" data-value="Ambele">Ambele</button>
+          </div>
+        </div>
+        <!-- Step 5 -->
+        <div class="wizard-step" data-step="4">
+          <div class="wizard-question">Vrei alimentare automata sau manuala?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="alimentare" data-value="Automata (peleti)">Automata (peleti)</button>
+            <button class="wizard-option" data-key="alimentare" data-value="Manuala (lemne)">Manuala (lemne)</button>
+            <button class="wizard-option" data-key="alimentare" data-value="Nu stiu">Nu stiu</button>
+          </div>
+        </div>
+        <!-- Step 6 -->
+        <div class="wizard-step" data-step="5">
+          <div class="wizard-question">Ai nevoie si de apa calda?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="apa_calda" data-value="Da">Da</button>
+            <button class="wizard-option" data-key="apa_calda" data-value="Nu">Nu</button>
+            <button class="wizard-option" data-key="apa_calda" data-value="Nu stiu">Nu stiu</button>
+          </div>
+        </div>
+        <!-- Result -->
+        <div class="wizard-step" data-step="result">
+          <div class="wizard-result" id="result-cazane"></div>
+        </div>
+        <div class="wizard-nav">
+          <button class="btn-secondary wizard-back-btn" style="visibility:hidden;">Inapoi</button>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Climatizare -->
+  <section class="ghid-category-section" id="section-climatizare">
+    <div class="container">
+      <h2 class="section-title">&#10052;&#65039; Climatizare</h2>
+      <div class="ghid-intro">
+        <p>Aerul conditionat modern nu doar raceste vara — poate incalzi eficient si iarna. Sistemele split sunt cele mai populare, iar alegerea depinde de numarul de camere si tipul cladirii. Te ajutam sa gasesti varianta optima.</p>
+      </div>
+      <div class="wizard-container" id="wizard-climatizare">
+        <div class="wizard-progress">
+          <div class="wizard-dot active"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+        </div>
+        <!-- Step 1 -->
+        <div class="wizard-step active" data-step="0">
+          <div class="wizard-question">Ce vrei sa faci?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="scop" data-value="Racire vara">Racire vara</button>
+            <button class="wizard-option" data-key="scop" data-value="Incalzire iarna">Incalzire iarna</button>
+            <button class="wizard-option" data-key="scop" data-value="Ambele">Ambele</button>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="wizard-step" data-step="1">
+          <div class="wizard-question">Cate camere vrei sa climatizezi?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="camere" data-value="1 camera">1 camera</button>
+            <button class="wizard-option" data-key="camere" data-value="2-3 camere">2 — 3 camere</button>
+            <button class="wizard-option" data-key="camere" data-value="4+ camere">4+ camere</button>
+            <button class="wizard-option" data-key="camere" data-value="Spatiu comercial">Spatiu comercial</button>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="wizard-step" data-step="2">
+          <div class="wizard-question">Tip cladire</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="cladire" data-value="Apartament">Apartament</button>
+            <button class="wizard-option" data-key="cladire" data-value="Casa">Casa</button>
+            <button class="wizard-option" data-key="cladire" data-value="Spatiu comercial">Spatiu comercial</button>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="wizard-step" data-step="3">
+          <div class="wizard-question">Ai mai avut aer conditionat?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="experienta" data-value="Da">Da</button>
+            <button class="wizard-option" data-key="experienta" data-value="Nu">Nu</button>
+          </div>
+        </div>
+        <!-- Result -->
+        <div class="wizard-step" data-step="result">
+          <div class="wizard-result" id="result-climatizare"></div>
+        </div>
+        <div class="wizard-nav">
+          <button class="btn-secondary wizard-back-btn" style="visibility:hidden;">Inapoi</button>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Incalzire in pardoseala -->
+  <section class="ghid-category-section" id="section-pardoseala">
+    <div class="container">
+      <h2 class="section-title">&#127777;&#65039; Incalzire in pardoseala</h2>
+      <div class="ghid-intro">
+        <p>Incalzirea in pardoseala ofera confort uniform in toata casa — fara calorifere, fara curenti de aer, temperatura placuta de la podea. Functioneaza cel mai bine cu surse de caldura la temperatura joasa, cum ar fi pompele de caldura. Raspunde la 3 intrebari si iti spunem ce implica.</p>
+      </div>
+      <div class="wizard-container" id="wizard-pardoseala">
+        <div class="wizard-progress">
+          <div class="wizard-dot active"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+        </div>
+        <!-- Step 1 -->
+        <div class="wizard-step active" data-step="0">
+          <div class="wizard-question">Constructie noua sau renovare?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="constructie" data-value="Constructie noua">Constructie noua</button>
+            <button class="wizard-option" data-key="constructie" data-value="Renovare">Renovare</button>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="wizard-step" data-step="1" data-input-step="true">
+          <div class="wizard-question">Care este suprafata de acoperit?</div>
+          <div class="wizard-input-wrap">
+            <input type="number" class="wizard-input-field" id="input-pardoseala-suprafata" min="10" max="2000" placeholder="Ex: 80">
+            <span class="wizard-input-unit">m²</span>
+          </div>
+          <button class="wizard-input-next btn-primary" data-key="suprafata" data-wizard="pardoseala">Continua</button>
+        </div>
+        <!-- Step 3 -->
+        <div class="wizard-step" data-step="2">
+          <div class="wizard-question">Cum este structurata locuinta?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="structura" data-value="Parter">Parter</button>
+            <button class="wizard-option" data-key="structura" data-value="Parter + Mansarda">Parter + Mansarda</button>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="wizard-step" data-step="3">
+          <div class="wizard-question">Ai deja o sursa de caldura (centrala, cazan)?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="sursa" data-value="Da">Da</button>
+            <button class="wizard-option" data-key="sursa" data-value="Nu">Nu</button>
+            <button class="wizard-option" data-key="sursa" data-value="Urmeaza sa cumpar">Urmeaza sa cumpar</button>
+          </div>
+        </div>
+        <!-- Result -->
+        <div class="wizard-step" data-step="result">
+          <div class="wizard-result" id="result-pardoseala"></div>
+        </div>
+        <div class="wizard-nav">
+          <button class="btn-secondary wizard-back-btn" style="visibility:hidden;">Inapoi</button>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pompe de caldura -->
+  <section class="ghid-category-section" id="section-pompe">
+    <div class="container">
+      <h2 class="section-title">&#9832;&#65039; Pompe de caldura</h2>
+      <div class="ghid-intro">
+        <p>Pompa de caldura e cea mai eficienta solutie de incalzire disponibila azi. Extrage caldura din aerul exterior si o transfera in casa, consumand de 3-4 ori mai putina energie decat o centrala clasica. Investitia initiala e mai mare, dar economia pe facturi e semnificativa pe termen lung.</p>
+      </div>
+      <div class="wizard-container" id="wizard-pompe">
+        <div class="wizard-progress">
+          <div class="wizard-dot active"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+          <div class="wizard-dot"></div>
+        </div>
+        <!-- Step 1 -->
+        <div class="wizard-step active" data-step="0">
+          <div class="wizard-question">Ce vrei sa faci?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="scop" data-value="Inlocuiesc centrala veche">Inlocuiesc centrala veche</button>
+            <button class="wizard-option" data-key="scop" data-value="Instalatie noua de la zero">Instalatie noua de la zero</button>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="wizard-step" data-step="1" data-input-step="true">
+          <div class="wizard-question">Care este suprafata locuintei?</div>
+          <div class="wizard-input-wrap">
+            <input type="number" class="wizard-input-field" id="input-pompe-suprafata" min="10" max="2000" placeholder="Ex: 120">
+            <span class="wizard-input-unit">m²</span>
+          </div>
+          <button class="wizard-input-next btn-primary" data-key="suprafata" data-wizard="pompe">Continua</button>
+        </div>
+        <!-- Step 3 -->
+        <div class="wizard-step" data-step="2">
+          <div class="wizard-question">Cum este structurata locuinta?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="structura" data-value="Parter">Parter</button>
+            <button class="wizard-option" data-key="structura" data-value="Parter + Mansarda">Parter + Mansarda</button>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="wizard-step" data-step="3">
+          <div class="wizard-question">Ai spatiu exterior (curte/gradina)?</div>
+          <div class="wizard-options">
+            <button class="wizard-option" data-key="spatiu_ext" data-value="Da">Da</button>
+            <button class="wizard-option" data-key="spatiu_ext" data-value="Nu">Nu</button>
+          </div>
+        </div>
+        <!-- Result -->
+        <div class="wizard-step" data-step="result">
+          <div class="wizard-result" id="result-pompe"></div>
+        </div>
+        <div class="wizard-nav">
+          <button class="btn-secondary wizard-back-btn" style="visibility:hidden;">Inapoi</button>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FORMULAR COMUN ==================== -->
+  <section class="formular-ghid" id="formular-ghid">
+    <div class="container">
+      <h2 class="section-title">Trimite cererea ta</h2>
+      <p class="section-subtitle">Completeaza datele si te contactam cu o oferta personalizata.</p>
+
+      <!-- Inactive message -->
+      <div class="form-inactive-msg" id="form-inactive-msg">
+        <a href="#hub-categorii" class="btn-secondary" style="background:#FFFFFF; color:#E8732A; border-color:#FFFFFF;">Completeaza ghid</a>
+      </div>
+
+      <!-- Active form area -->
+      <div class="form-active" id="form-active-area">
+        <!-- Completed summaries -->
+        <div class="completed-summaries" id="completed-summaries"></div>
+
+        <!-- Form -->
+        <div class="form-container">
+          <form id="ghid-form" novalidate>
+            <label for="ghid-categorie">Categorie principala</label>
+            <select id="ghid-categorie" name="categorie">
+              <option value="Centrale termice">Centrale termice</option>
+              <option value="Cazane & Sobe">Cazane &amp; Sobe</option>
+              <option value="Climatizare">Climatizare</option>
+              <option value="Incalzire in pardoseala">Incalzire in pardoseala</option>
+              <option value="Pompe de caldura">Pompe de caldura</option>
+            </select>
+
+            <div class="form-row">
+              <div>
+                <label for="ghid-nume">Nume *</label>
+                <input type="text" id="ghid-nume" name="nume" placeholder="Ex: Ion Popescu" required>
+              </div>
+              <div>
+                <label for="ghid-telefon">Telefon *</label>
+                <input type="tel" id="ghid-telefon" name="telefon" placeholder="Ex: 0712345678" required>
+              </div>
+            </div>
+
+            <label for="ghid-email">Email</label>
+            <input type="email" id="ghid-email" name="email" placeholder="Ex: ion@email.com">
+
+            <label for="ghid-detalii">Detalii</label>
+            <textarea id="ghid-detalii" name="detalii" placeholder="Adauga orice detaliu consideri relevant (optional)"></textarea>
+
+            <button type="submit" class="btn-primary" style="width:100%;">Trimite cererea</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Confirmation -->
+      <div class="confirmation-box" id="confirmation-box">
+        <div class="check-icon">&#9989;</div>
+        <h3>Cererea ta a fost trimisa!</h3>
+        <p>Te contactam in maxim 2 ore.</p>
+        <div class="ref-code" id="ref-code"></div>
+        <div class="cross-link-section">
+          <h4>Mai ai nevoie si de...?</h4>
+          <div class="cross-link-cards" id="cross-link-cards"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>TermoShop</h4>
+        <p>Experti in incalzire si climatizare langa tine. Consultanta gratuita si intermediere pentru centrale termice.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Pagini</h4>
+        <ul>
+          <li><a href="index.html">Acasa</a></li>
+          <li><a href="servicii.html">Servicii</a></li>
+          <li><a href="ghid.html">Ghid</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+40775175897">0775 175 897</a><br>
+          <a href="mailto:ovidiucristiand@gmail.com">ovidiucristiand@gmail.com</a>
+        </p>
+        <p style="margin-top: 12px;">Ovidiu Cristian Diaconu</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 TermoShop. Toate drepturile rezervate.
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+  (function() {
+    'use strict';
+
+    // ===== DATA =====
+    var CATEGORIES = {
+      centrale: {
+        name: 'Centrale termice',
+        icon: '\u{1F525}',
+        totalSteps: 6,
+        questionLabels: ['Tip locuinta', 'Suprafata', 'Structura', 'Racord gaz', 'Izolatie', 'Apa calda']
+      },
+      cazane: {
+        name: 'Cazane & Sobe',
+        icon: '\u{1FAB5}',
+        totalSteps: 6,
+        questionLabels: ['Tip locuinta', 'Suprafata', 'Structura', 'Combustibil', 'Alimentare', 'Apa calda']
+      },
+      climatizare: {
+        name: 'Climatizare',
+        icon: '\u2744\uFE0F',
+        totalSteps: 4,
+        questionLabels: ['Scop', 'Nr. camere', 'Tip cladire', 'Experienta AC']
+      },
+      pardoseala: {
+        name: 'Incalzire in pardoseala',
+        icon: '\u{1F321}\uFE0F',
+        totalSteps: 4,
+        questionLabels: ['Constructie/Renovare', 'Suprafata', 'Structura', 'Sursa caldura']
+      },
+pompe: {
+        name: 'Pompe de caldura',
+        icon: '\u2668\uFE0F',
+        totalSteps: 4,
+        questionLabels: ['Scop', 'Suprafata', 'Structura', 'Spatiu exterior']
+      }
+    };
+
+    // ===== STATE =====
+    var wizardState = {};  // { categoryId: { currentStep, answers: {}, completed: bool } }
+    var completedCategories = []; // ordered list of completed category IDs
+
+    // Initialize state for all categories
+    Object.keys(CATEGORIES).forEach(function(catId) {
+      wizardState[catId] = {
+        currentStep: 0,
+        answers: {},
+        completed: false
+      };
+    });
+
+    // ===== OPEN CATEGORY =====
+    window.openCategory = function(catId) {
+      var section = document.getElementById('section-' + catId);
+      if (!section) return;
+
+      // Close all other sections
+      document.querySelectorAll('.ghid-category-section').forEach(function(s) {
+        if (s.id !== 'section-' + catId) {
+          s.classList.remove('open');
+        }
+      });
+
+      // Toggle this one open
+      section.classList.add('open');
+
+      // Mark hub card as active
+      document.querySelectorAll('.ghid-hub .product-card').forEach(function(c) { c.classList.remove('active'); });
+      var hubCard = document.getElementById('hub-card-' + catId);
+      if (hubCard) hubCard.classList.add('active');
+
+      // Restore wizard state
+      restoreWizardState(catId);
+
+      // Scroll to section
+      setTimeout(function() {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    };
+
+    // ===== RESTORE WIZARD STATE =====
+    function restoreWizardState(catId) {
+      var state = wizardState[catId];
+      var container = document.getElementById('wizard-' + catId);
+      if (!container) return;
+
+      var steps = container.querySelectorAll('.wizard-step');
+      var dots = container.querySelectorAll('.wizard-dot');
+
+      // Restore selected options visually
+      Object.keys(state.answers).forEach(function(key) {
+        var value = state.answers[key];
+        var btns = container.querySelectorAll('.wizard-option[data-key="' + key + '"]');
+        btns.forEach(function(btn) {
+          if (btn.getAttribute('data-value') === value) {
+            btn.classList.add('selected');
+          } else {
+            btn.classList.remove('selected');
+          }
+        });
+      });
+
+      // Restore input fields
+      var inputs = container.querySelectorAll('.wizard-input-field');
+      inputs.forEach(function(inp) {
+        var stepEl = inp.closest('.wizard-step');
+        var nextBtn = stepEl ? stepEl.querySelector('.wizard-input-next') : null;
+        if (nextBtn) {
+          var key = nextBtn.getAttribute('data-key');
+          if (state.answers[key]) {
+            inp.value = state.answers[key].replace(' m²', '');
+          }
+        }
+      });
+
+      if (state.completed) {
+        // Show result
+        showWizardStep(catId, 'result');
+      } else {
+        showWizardStep(catId, state.currentStep);
+      }
+    }
+
+    // ===== SHOW WIZARD STEP =====
+    function showWizardStep(catId, step) {
+      var container = document.getElementById('wizard-' + catId);
+      if (!container) return;
+
+      var steps = container.querySelectorAll('.wizard-step');
+      var dots = container.querySelectorAll('.wizard-dot');
+      var totalSteps = CATEGORIES[catId].totalSteps;
+      var backBtn = container.querySelector('.wizard-back-btn');
+      var navEl = container.querySelector('.wizard-nav');
+
+      // Hide all steps
+      steps.forEach(function(s) { s.style.display = 'none'; s.classList.remove('active'); });
+
+      if (step === 'result') {
+        // Show result step
+        var resultStep = container.querySelector('.wizard-step[data-step="result"]');
+        if (resultStep) {
+          resultStep.style.display = 'block';
+          resultStep.classList.add('active');
+        }
+        // All dots completed
+        dots.forEach(function(d) { d.classList.remove('active'); d.classList.add('completed'); });
+        if (navEl) navEl.style.display = 'none';
+      } else {
+        // Show specific step
+        var target = container.querySelector('.wizard-step[data-step="' + step + '"]');
+        if (target) {
+          target.style.display = 'block';
+          target.classList.add('active');
+        }
+        // Update dots
+        dots.forEach(function(d, i) {
+          d.classList.remove('active', 'completed');
+          if (i < step) d.classList.add('completed');
+          if (i === step) d.classList.add('active');
+        });
+        // Back button
+        if (backBtn) backBtn.style.visibility = step > 0 ? 'visible' : 'hidden';
+        if (navEl) navEl.style.display = 'flex';
+      }
+    }
+
+    // ===== GENERATE RECOMMENDATION =====
+    function getRecommendation(catId, answers) {
+      var rec = { title: '', text: '', details: '' };
+
+      if (catId === 'centrale') {
+        // Power calculation
+        var supVal = answers.suprafata || '';
+        var sup = parseInt(supVal) || 75;
+
+        var kwMin = Math.round(sup / 10);
+        var kwMax = kwMin;
+
+        var izol = answers.izolatie || '';
+        if (izol.indexOf('Fara') >= 0 || izol.indexOf('Nu stiu') >= 0) kwMax = Math.round(kwMin * 1.5);
+        else if (izol.indexOf('Medie') >= 0) kwMax = Math.round(kwMin * 1.2);
+
+        var apa = answers.apa_calda || '';
+        if (apa === 'Da' || apa === 'Nu stiu') { kwMin += 5; kwMax += 10; }
+
+        var gaz = answers.gaz || '';
+        var tip = '';
+        if (gaz === 'Da') {
+          tip = 'Centrala pe gaz';
+          rec.text = 'Avand racord la gaz, o centrala pe gaz e cea mai eficienta si populara alegere. Consum rezonabil, incalzire rapida. Branduri recomandate: Warmline si Neus.';
+        } else if (gaz === 'Nu') {
+          tip = 'Centrala electrica sau pompa de caldura';
+          rec.text = 'Fara gaz, cele mai bune optiuni sunt centrala electrica (simpla, fara cos de fum) sau pompa de caldura (cea mai economica pe termen lung). Brand recomandat: Tis.';
+        } else {
+          tip = 'Centrala pe gaz sau electrica';
+          rec.text = 'Recomandam sa verifici daca ai racord la gaz — daca da, centrala pe gaz e ideala. Daca nu, o centrala electrica sau pompa de caldura sunt alternative foarte bune.';
+        }
+
+        rec.title = 'Recomandam: ' + tip;
+        rec.details = 'Putere orientativa: ' + kwMin + ' — ' + kwMax + ' kW';
+      }
+
+      else if (catId === 'cazane') {
+        var comb = answers.combustibil || '';
+        var alim = answers.alimentare || '';
+        var tip = '';
+
+        if (comb === 'Peleti' || alim.indexOf('Automata') >= 0) {
+          tip = 'Cazan pe peleti cu alimentare automata';
+          rec.text = 'Cazanul pe peleti cu alimentare automata ofera confort maxim — il incarci o data la cateva zile si functioneaza singur. Branduri recomandate: Kronas si Almax.';
+        } else if (comb === 'Lemne' || alim.indexOf('Manuala') >= 0) {
+          tip = 'Cazan pe lemne';
+          rec.text = 'Cazanul pe lemne e alegerea clasica, cu cel mai mic cost al combustibilului. Necesita alimentare manuala si spatiu de depozitare. Branduri recomandate: Kronas si Almax.';
+        } else {
+          tip = 'Cazan pe lemne sau peleti';
+          rec.text = 'Ai acces la ambele tipuri de combustibil — perfect. Un cazan mixt sau un cazan pe peleti cu optiune de lemne iti ofera flexibilitate maxima.';
+        }
+
+        var apaC = answers.apa_calda || '';
+        if (apaC === 'Da' || apaC === 'Nu stiu') {
+          rec.text += ' Recomandam un model cu boiler integrat sau un boiler separat pentru apa calda.';
+        }
+
+        rec.title = 'Recomandam: ' + tip;
+        rec.details = (answers.locuinta || '') + ' | ' + (answers.suprafata || '') + (answers.structura ? ' | ' + answers.structura : '');
+      }
+
+      else if (catId === 'climatizare') {
+        var camere = answers.camere || '';
+        var scop = answers.scop || '';
+        var tip = '';
+
+        if (camere === '1 camera') {
+          tip = 'Split mono (1 unitate interioara)';
+          rec.text = 'Pentru o singura camera, un split mono e solutia ideala — eficient, silentios si usor de instalat.';
+        } else if (camere === '2-3 camere') {
+          tip = 'Multi-split sau 2-3 unitati mono';
+          rec.text = 'Pentru 2-3 camere poti alege un sistem multi-split (un singur compresor exterior) sau unitati mono separate. Multi-split-ul e mai estetic, mono-urile sunt mai flexibile.';
+        } else if (camere === '4+ camere') {
+          tip = 'Sistem multi-split sau VRF';
+          rec.text = 'Pentru 4+ camere, un sistem multi-split sau VRF e cel mai eficient. Necesita proiectare profesionala pentru dimensionare corecta.';
+        } else {
+          tip = 'Sistem comercial — necesita evaluare';
+          rec.text = 'Spatiile comerciale necesita o evaluare la fata locului pentru dimensionare corecta. Te putem conecta cu specialisti.';
+        }
+
+        if (scop === 'Ambele') {
+          rec.text += ' Modelele inverter ofera atat racire vara cat si incalzire eficienta iarna.';
+        }
+
+        rec.title = 'Recomandam: ' + tip;
+        rec.details = scop + ' | ' + camere;
+      }
+
+      else if (catId === 'pardoseala') {
+        var constr = answers.constructie || '';
+        var sursa = answers.sursa || '';
+
+        if (constr === 'Constructie noua') {
+          rec.title = 'Recomandam: Sistem complet de incalzire in pardoseala';
+          rec.text = 'La constructie noua, incalzirea in pardoseala se integreaza usor. Recomandam combinatia cu o pompa de caldura pentru eficienta maxima. Costul e mai mic decat la renovare.';
+        } else {
+          rec.title = 'Recomandam: Incalzire in pardoseala cu profil redus';
+          rec.text = 'La renovare, exista sisteme cu profil redus (doar 15-30mm) care nu necesita sapat in profunzime. E posibil, dar necesita evaluare la fata locului.';
+        }
+
+        if (sursa === 'Nu' || sursa === 'Urmeaza sa cumpar') {
+          rec.text += ' Vei avea nevoie si de o sursa de caldura — te putem ajuta sa alegi centrala sau pompa de caldura potrivita.';
+        }
+
+        rec.details = constr + ' | ' + (answers.suprafata || '') + (answers.structura ? ' | ' + answers.structura : '');
+      }
+
+      else if (catId === 'pompe') {
+        var scop = answers.scop || '';
+        var supVal = answers.suprafata || '';
+        var spatiu = answers.spatiu_ext || '';
+
+        var tip = '';
+        if (spatiu === 'Da') {
+          tip = 'Pompa de caldura aer-apa';
+          rec.text = 'Cu spatiu exterior disponibil, o pompa de caldura aer-apa e cea mai buna alegere. Se monteaza unitatea exterioara in curte si asigura incalzire + apa calda cu consum minim de energie.';
+        } else {
+          tip = 'Pompa de caldura aer-aer (tip split)';
+          rec.text = 'Fara spatiu exterior generos, o pompa de caldura aer-aer (similara cu un AC inverter) e cea mai practica optiune. Functioneaza ca un split, dar optimizat pentru incalzire.';
+        }
+
+        if (scop.indexOf('Inlocuiesc') >= 0) {
+          rec.text += ' Inlocuirea centralei vechi cu o pompa de caldura poate reduce facturile cu pana la 60-70%.';
+        }
+
+        rec.title = 'Recomandam: ' + tip;
+        rec.details = supVal + (answers.structura ? ' | ' + answers.structura : '');
+      }
+
+      return rec;
+    }
+
+    // ===== RENDER RESULT =====
+    function renderResult(catId) {
+      var state = wizardState[catId];
+      var rec = getRecommendation(catId, state.answers);
+      var resultDiv = document.getElementById('result-' + catId);
+      if (!resultDiv) return;
+
+      var labels = CATEGORIES[catId].questionLabels;
+      var answerKeys = Object.keys(state.answers);
+
+      var summaryHtml = '<div class="wizard-summary" style="margin-bottom:24px; text-align:left;">';
+      summaryHtml += '<h4 style="color:#E8732A; margin-bottom:12px; font-size:0.95rem;">Raspunsurile tale:</h4>';
+      answerKeys.forEach(function(key, i) {
+        var label = labels[i] || key;
+        summaryHtml += '<div class="wizard-summary-item"><span class="label">' + label + '</span><span class="value">' + state.answers[key] + '</span></div>';
+      });
+      summaryHtml += '</div>';
+
+      resultDiv.innerHTML =
+        summaryHtml +
+        '<h3>' + rec.title + '</h3>' +
+        '<p>' + rec.text + '</p>' +
+        (rec.details ? '<p style="font-weight:600; color:#2D3436; margin-bottom:24px;">' + rec.details + '</p>' : '') +
+        '<button class="btn-primary" style="width:100%;" onclick="scrollToForm(\'' + catId + '\')">Vreau oferta pentru aceasta solutie</button>' +
+        '<button class="btn-secondary" style="margin-top:12px; width:100%;" onclick="resetWizard(\'' + catId + '\')">Reia testul</button>';
+    }
+
+    // ===== SCROLL TO FORM =====
+    window.scrollToForm = function(catId) {
+      activateForm(catId);
+      setTimeout(function() {
+        document.getElementById('formular-ghid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    };
+
+    // ===== ACTIVATE FORM =====
+    function activateForm(firstCatId) {
+      document.getElementById('form-inactive-msg').style.display = 'none';
+      var formArea = document.getElementById('form-active-area');
+      formArea.classList.add('visible');
+
+      // Set dropdown to the first completed category or provided catId
+      var catSelect = document.getElementById('ghid-categorie');
+      if (firstCatId) {
+        var catName = CATEGORIES[firstCatId].name;
+        for (var i = 0; i < catSelect.options.length; i++) {
+          if (catSelect.options[i].value === catName) {
+            catSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      // Render completed summaries
+      renderCompletedSummaries();
+    }
+
+    // ===== RENDER COMPLETED SUMMARIES =====
+    function renderCompletedSummaries() {
+      var container = document.getElementById('completed-summaries');
+      var html = '';
+
+      completedCategories.forEach(function(catId) {
+        var cat = CATEGORIES[catId];
+        var state = wizardState[catId];
+        var labels = cat.questionLabels;
+        var answerKeys = Object.keys(state.answers);
+
+        html += '<div class="completed-summary-card">';
+        html += '<h4>' + cat.icon + ' ' + cat.name + '</h4>';
+        html += '<div class="summary-details">';
+        answerKeys.forEach(function(key, i) {
+          html += '<span class="summary-tag">' + (labels[i] || key) + ': ' + state.answers[key] + '</span>';
+        });
+        html += '</div></div>';
+      });
+
+      container.innerHTML = html;
+    }
+
+    // ===== RESET WIZARD =====
+    window.resetWizard = function(catId) {
+      var state = wizardState[catId];
+      state.currentStep = 0;
+      state.answers = {};
+      state.completed = false;
+
+      // Remove from completed list
+      var idx = completedCategories.indexOf(catId);
+      if (idx >= 0) completedCategories.splice(idx, 1);
+
+      // Clear visual selections
+      var container = document.getElementById('wizard-' + catId);
+      if (container) {
+        container.querySelectorAll('.wizard-option').forEach(function(btn) {
+          btn.classList.remove('selected');
+        });
+      }
+
+      showWizardStep(catId, 0);
+
+      // Update form if needed
+      if (completedCategories.length === 0) {
+        document.getElementById('form-inactive-msg').style.display = 'block';
+        document.getElementById('form-active-area').classList.remove('visible');
+      } else {
+        renderCompletedSummaries();
+      }
+    };
+
+    // ===== INPUT VALIDATION (live) =====
+    document.getElementById('ghid-nume').addEventListener('input', function() {
+      this.value = this.value.replace(/[^a-zA-ZăâîșțĂÂÎȘȚ\s\-]/g, '');
+    });
+    document.getElementById('ghid-telefon').addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    // ===== OPTION CLICK HANDLER =====
+    document.querySelectorAll('.ghid-category-section .wizard-option').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var container = this.closest('.wizard-container');
+        var catId = container.id.replace('wizard-', '');
+        var state = wizardState[catId];
+        var cat = CATEGORIES[catId];
+
+        var key = this.getAttribute('data-key');
+        var value = this.getAttribute('data-value');
+        state.answers[key] = value;
+
+        // Visual selection
+        var siblings = this.parentElement.querySelectorAll('.wizard-option');
+        siblings.forEach(function(s) { s.classList.remove('selected'); });
+        this.classList.add('selected');
+
+        // Advance after delay
+        setTimeout(function() {
+          if (state.currentStep < cat.totalSteps - 1) {
+            state.currentStep++;
+            showWizardStep(catId, state.currentStep);
+          } else {
+            // Completed
+            state.completed = true;
+            if (completedCategories.indexOf(catId) < 0) {
+              completedCategories.push(catId);
+            }
+            renderResult(catId);
+            showWizardStep(catId, 'result');
+          }
+        }, 300);
+      });
+    });
+
+    // ===== INPUT NEXT BUTTON HANDLER =====
+    document.querySelectorAll('.wizard-input-next').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var key = this.getAttribute('data-key');
+        var catId = this.getAttribute('data-wizard');
+        var inputEl = this.closest('.wizard-step').querySelector('.wizard-input-field');
+        var val = inputEl ? inputEl.value.trim() : '';
+        if (!val || isNaN(val) || parseInt(val) < 1) {
+          inputEl.style.borderColor = '#E8732A';
+          inputEl.focus();
+          return;
+        }
+        inputEl.style.borderColor = '';
+        var state = wizardState[catId];
+        state.answers[key] = val + ' m²';
+        state.currentStep += 1;
+        showWizardStep(catId, state.currentStep);
+      });
+    });
+
+    // ===== BACK BUTTON HANDLER =====
+    document.querySelectorAll('.wizard-back-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var container = this.closest('.wizard-container');
+        var catId = container.id.replace('wizard-', '');
+        var state = wizardState[catId];
+
+        if (state.currentStep > 0) {
+          state.currentStep--;
+          showWizardStep(catId, state.currentStep);
+        }
+      });
+    });
+
+    // ===== FORM VALIDATION & SUBMIT =====
+    var form = document.getElementById('ghid-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var nume = document.getElementById('ghid-nume').value.trim();
+      var telefon = document.getElementById('ghid-telefon').value.trim();
+      var email = document.getElementById('ghid-email').value.trim();
+
+      // Validate name — letters, spaces, hyphens
+      if (!/^[a-zA-ZàáâãäåæçèéêëìíîïðñòóôõöùúûüýþÿĂăÂâÎîȘșȚț\s\-]+$/.test(nume)) {
+        alert('Te rugam sa introduci un nume valid (doar litere).');
+        document.getElementById('ghid-nume').focus();
+        return;
+      }
+
+      // Validate phone — digits only, min 10
+      if (!/^\d{10,}$/.test(telefon)) {
+        alert('Te rugam sa introduci un numar de telefon valid (doar cifre, minim 10).');
+        document.getElementById('ghid-telefon').focus();
+        return;
+      }
+
+      // Validate email if provided
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Te rugam sa introduci o adresa de email valida.');
+        document.getElementById('ghid-email').focus();
+        return;
+      }
+
+      // Generate reference code TS-YYYY-MMDD-XXXX
+      var now = new Date();
+      var yyyy = now.getFullYear();
+      var mm = String(now.getMonth() + 1).padStart(2, '0');
+      var dd = String(now.getDate()).padStart(2, '0');
+      var rand = String(Math.floor(1000 + Math.random() * 9000));
+      var refCode = 'TS-' + yyyy + '-' + mm + dd + '-' + rand;
+
+      // Show confirmation
+      document.getElementById('form-active-area').classList.remove('visible');
+      document.getElementById('form-inactive-msg').style.display = 'none';
+      var confBox = document.getElementById('confirmation-box');
+      confBox.classList.add('visible');
+      document.getElementById('ref-code').textContent = 'Cod referinta: ' + refCode;
+
+      // Cross-linking — show categories NOT completed
+      var crossContainer = document.getElementById('cross-link-cards');
+      var crossHtml = '';
+      Object.keys(CATEGORIES).forEach(function(catId) {
+        if (completedCategories.indexOf(catId) < 0) {
+          var cat = CATEGORIES[catId];
+          crossHtml += '<button class="cross-link-card" onclick="goToCategoryFromConfirmation(\'' + catId + '\')">' + cat.icon + ' ' + cat.name + '</button>';
+        }
+      });
+      crossContainer.innerHTML = crossHtml;
+
+      // Scroll to confirmation
+      setTimeout(function() {
+        confBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 200);
+
+      // Log to console (replace with actual API call)
+      console.log('=== GHID FORM SUBMISSION ===');
+      console.log('Ref:', refCode);
+      console.log('Categorie:', document.getElementById('ghid-categorie').value);
+      console.log('Nume:', nume);
+      console.log('Telefon:', telefon);
+      console.log('Email:', email);
+      console.log('Detalii:', document.getElementById('ghid-detalii').value);
+      completedCategories.forEach(function(catId) {
+        console.log('Wizard ' + catId + ':', JSON.stringify(wizardState[catId].answers));
+      });
+    });
+
+    // ===== GO TO CATEGORY FROM CONFIRMATION =====
+    window.goToCategoryFromConfirmation = function(catId) {
+      // Hide confirmation, show form inactive
+      document.getElementById('confirmation-box').classList.remove('visible');
+      document.getElementById('form-inactive-msg').style.display = 'block';
+
+      // Reset form
+      form.reset();
+
+      // Open category
+      window.openCategory(catId);
+    };
+
+  })();
+  </script>
+
+</body>
+</html>
