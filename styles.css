@@ -1293,25 +1293,49 @@ section {
     font-size: 1.5rem;
   }
 
-  .navbar-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #FFFFFF;
-    flex-direction: column;
-    padding: 20px;
-    gap: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-links.open {
-    display: flex;
+  .navbar .container {
+    flex-wrap: wrap;
   }
 
   .navbar-toggle {
-    display: block;
+    display: none;
+  }
+
+  .navbar-links,
+  .navbar-links.open {
+    display: flex;
+    position: static;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 6px 0 4px;
+    gap: 0;
+    border-top: 1px solid #F0F0F0;
+    margin-top: 6px;
+  }
+
+  .navbar-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar-links li {
+    flex-shrink: 0;
+  }
+
+  .navbar-links a {
+    white-space: nowrap;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .navbar-cta {
+    padding: 5px 14px !important;
+    font-size: 0.78rem !important;
+    border-radius: 20px !important;
   }
 
   .hero-buttons {
