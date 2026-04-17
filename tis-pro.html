@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIS Pro — Toate variantele de putere | CrisTermo</title>
+  <meta name="description" content="Cazan TIS Pro pe combustibil solid (lemne, carbune, brichete). 4 variante de la 15 la 30 kW. Ardere lunga pana la 16 ore. Calculator putere si preturi.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .breadcrumb { color:#E8732A; font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+    .breadcrumb a { color:#E8732A; text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .kw-selector { background: linear-gradient(135deg, #FFF2E8 0%, #FFE4D0 100%); border: 2px solid #E8732A; border-radius: 20px; padding: 32px 28px; max-width: 680px; margin: 0 auto 48px; box-shadow: 0 8px 24px rgba(232, 115, 42, 0.12); }
+    .kw-selector h2 { font-size: 1.4rem; color: #2D3436; margin-bottom: 8px; text-align: center; }
+    .kw-selector p.kw-subtitle { text-align: center; color: #636E72; font-size: 0.92rem; margin-bottom: 24px; }
+    .kw-form { display: flex; gap: 12px; align-items: stretch; max-width: 440px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .kw-form label { display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #F5E6D3; border-radius: 12px; padding: 4px 6px 4px 18px; flex: 1; min-width: 220px; transition: border-color 0.2s; }
+    .kw-form label:focus-within { border-color: #E8732A; }
+    .kw-form label span { color: #636E72; font-size: 0.88rem; white-space: nowrap; }
+    .kw-form input { border: none; outline: none; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; color: #2D3436; width: 100%; padding: 10px 8px; background: transparent; }
+    .kw-form .unit { color: #E8732A; font-weight: 600; padding-right: 12px; }
+    .kw-form button { background: #E8732A; color: #FFFFFF; border: none; border-radius: 12px; padding: 0 24px; font-family: 'Poppins', sans-serif; font-size: 0.92rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; white-space: nowrap; }
+    .kw-form button:hover { background: #D4611F; transform: translateY(-1px); }
+    .kw-result { display: none; margin-top: 20px; padding: 14px 18px; background: #FFFFFF; border-left: 4px solid #E8732A; border-radius: 8px; font-size: 0.95rem; color: #2D3436; }
+    .kw-result.is-visible { display: block; }
+    .kw-result strong { color: #E8732A; }
+    .kw-note { text-align: center; font-size: 0.82rem; color: #636E72; margin-top: 18px; font-style: italic; }
+    .variant-card.is-recommended { border: 3px solid #E8732A; box-shadow: 0 12px 32px rgba(232, 115, 42, 0.25); transform: translateY(-4px); position: relative; }
+    .variant-card.is-recommended::before { content: "POTRIVIT PENTRU TINE"; position: absolute; top: 12px; right: 12px; background: #E8732A; color: #FFFFFF; font-size: 0.68rem; font-weight: 700; padding: 5px 11px; border-radius: 20px; letter-spacing: 0.5px; z-index: 2; box-shadow: 0 2px 8px rgba(232, 115, 42, 0.3); }
+    .variant-card { transition: all 0.35s ease; }
+    .price-box { background:#FFF8F0; border-left:4px solid #E8732A; padding:10px 14px; margin:8px 0 16px; border-radius:6px; }
+    .price-ron { color:#E8732A; font-weight:700; font-size:1.1rem; display:block; }
+    .price-eur { color:#636E72; font-size:0.82rem; display:block; }
+    .info-note { background: #FFF8F0; border-radius: 16px; padding: 32px; margin-top: 48px; }
+    .info-note h3 { color: #2D3436; margin-bottom: 12px; font-size: 1.15rem; }
+    .info-note p { color: #636E72; font-size: 0.92rem; line-height: 1.7; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Cris<span>Termo</span><span class="navbar-brand-sub">Partener TermoShop</span></a>
+      <button class="navbar-toggle" aria-label="Meniu" onclick="document.querySelector('.navbar-links').classList.toggle('open')">&#9776;</button>
+      <ul class="navbar-links">
+        <li><a href="index.html">Acasa</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="produse.html" class="active">Produse</a></li>
+        <li><a href="informatii-utile.html">Informatii utile</a></li>
+        <li><a href="ghid.html">Ghid</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="navbar-cta">Cere consultanta</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="breadcrumb">
+        <a href="produse.html?cat=lemne">&larr; Produse</a> / <a href="tis.html">TIS</a> / Pro
+      </p>
+      <h1>TIS <span>Pro</span></h1>
+      <p>Cazan compact pe combustibil solid pentru case mici si medii. Functioneaza cu lemne, carbune si brichete. Ardere lunga pana la 16 ore pe incarcare. 4 variante intre 15 si 30 kW.</p>
+    </div>
+  </section>
+
+  <section style="background:#FFFFFF; padding:60px 20px 20px;">
+    <div class="container">
+
+      <div class="kw-selector">
+        <h2>De cata putere ai nevoie?</h2>
+        <p class="kw-subtitle">Introdu suprafata casei tale si iti recomandam varianta potrivita</p>
+        <div class="kw-form">
+          <label>
+            <span>Suprafata:</span>
+            <input type="number" id="kw-input" min="20" max="400" step="10" placeholder="150">
+            <span class="unit">m&sup2;</span>
+          </label>
+          <button onclick="calculateKW()">Calculeaza</button>
+        </div>
+        <div class="kw-result" id="kw-result"></div>
+        <p class="kw-note">
+          Formula orientativa: ~1 kW / 10 m&sup2; (pentru case cu izolatie normala). Pentru calcul exact, <a href="contact.html" style="color:#E8732A;">cere o consultanta gratuita</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:#FFFFFF; padding:20px 20px 60px;">
+    <div class="container">
+
+      <h2 style="text-align:center; font-size:1.4rem; color:#2D3436; margin-bottom:32px;">Toate variantele disponibile</h2>
+
+      <div class="catalog-grid">
+
+        <div class="catalog-card variant-card" data-kw="15">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/04/tis-pro-4.jpg" alt="TIS Pro 15 kW" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">15 kW</span>
+            <h3 class="catalog-card-title">TIS Pro 15 kW</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Putere</span><span class="spec-value">15 kW</span></li>
+              <li><span class="spec-label">Suprafata</span><span class="spec-value">~130 m&sup2;</span></li>
+              <li><span class="spec-label">Eficienta</span><span class="spec-value">86%</span></li>
+              <li><span class="spec-label">Ardere</span><span class="spec-value">pana la 16 ore</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, brichete</span></li>
+            </ul>
+            <div class="price-box"><span class="price-ron">6.138 lei</span><span class="price-eur">~1.227,60 &euro;</span></div>
+            <div class="catalog-card-footer">
+              <a href="https://termoshop.ro/wp-content/uploads/2023/04/Manual-TIS-plus.pdf" target="_blank" rel="noopener" class="catalog-card-manual">&#128196; Manual PDF</a>
+              <a href="contact.html?produs=TIS+Pro+15kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card variant-card" data-kw="20">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/04/tis-pro-4.jpg" alt="TIS Pro 20 kW" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">20 kW</span>
+            <h3 class="catalog-card-title">TIS Pro 20 kW</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Putere</span><span class="spec-value">20 kW</span></li>
+              <li><span class="spec-label">Suprafata</span><span class="spec-value">~170 m&sup2;</span></li>
+              <li><span class="spec-label">Eficienta</span><span class="spec-value">86%</span></li>
+              <li><span class="spec-label">Ardere</span><span class="spec-value">pana la 16 ore</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, brichete</span></li>
+            </ul>
+            <div class="price-box"><span class="price-ron">6.480 lei</span><span class="price-eur">~1.296,00 &euro;</span></div>
+            <div class="catalog-card-footer">
+              <a href="https://termoshop.ro/wp-content/uploads/2023/04/Manual-TIS-plus.pdf" target="_blank" rel="noopener" class="catalog-card-manual">&#128196; Manual PDF</a>
+              <a href="contact.html?produs=TIS+Pro+20kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card variant-card" data-kw="25">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/04/tis-pro-4.jpg" alt="TIS Pro 25 kW" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">25 kW</span>
+            <h3 class="catalog-card-title">TIS Pro 25 kW</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Putere</span><span class="spec-value">25 kW</span></li>
+              <li><span class="spec-label">Suprafata</span><span class="spec-value">~215 m&sup2;</span></li>
+              <li><span class="spec-label">Eficienta</span><span class="spec-value">86%</span></li>
+              <li><span class="spec-label">Ardere</span><span class="spec-value">pana la 16 ore</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, brichete</span></li>
+            </ul>
+            <div class="price-box"><span class="price-ron">6.840 lei</span><span class="price-eur">~1.368,00 &euro;</span></div>
+            <div class="catalog-card-footer">
+              <a href="https://termoshop.ro/wp-content/uploads/2023/04/Manual-TIS-plus.pdf" target="_blank" rel="noopener" class="catalog-card-manual">&#128196; Manual PDF</a>
+              <a href="contact.html?produs=TIS+Pro+25kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card variant-card" data-kw="30">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/04/tis-pro-4.jpg" alt="TIS Pro 30 kW" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">30 kW</span>
+            <h3 class="catalog-card-title">TIS Pro 30 kW</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Putere</span><span class="spec-value">30 kW</span></li>
+              <li><span class="spec-label">Suprafata</span><span class="spec-value">~260 m&sup2;</span></li>
+              <li><span class="spec-label">Eficienta</span><span class="spec-value">86%</span></li>
+              <li><span class="spec-label">Ardere</span><span class="spec-value">pana la 16 ore</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, brichete</span></li>
+            </ul>
+            <div class="price-box"><span class="price-ron">7.368 lei</span><span class="price-eur">~1.473,60 &euro;</span></div>
+            <div class="catalog-card-footer">
+              <a href="https://termoshop.ro/wp-content/uploads/2023/04/Manual-TIS-plus.pdf" target="_blank" rel="noopener" class="catalog-card-manual">&#128196; Manual PDF</a>
+              <a href="contact.html?produs=TIS+Pro+30kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info-note">
+        <h3>Pentru cine e TIS Pro potrivit?</h3>
+        <p><strong style="color:#E8732A;">Mai compact decat Uni:</strong> TIS Pro e mai mic si mai usor decat TIS Uni — ideal pentru centrale termice cu spatiu limitat sau pentru case mici si medii (pana la 260 m&sup2;).</p>
+        <p><strong style="color:#E8732A;">Ardere lunga:</strong> Camera de ardere optimizata permite arderi de pana la 16 ore pe o singura incarcare — mai putina atentie, mai multa caldura.</p>
+        <p><strong style="color:#E8732A;">Pret accesibil:</strong> Cel mai accesibil cazan TIS cu combustibil solid. Daca vrei mai multa putere sau o gama mai larga de marimi, uita-te la <a href="tis-uni.html" style="color:#E8732A;">TIS Uni</a>.</p>
+        <p><strong style="color:#E8732A;">Nu esti sigur?</strong> <a href="ghid.html" style="color:#E8732A;">Foloseste ghidul nostru</a> sau <a href="contact.html" style="color:#E8732A;">cere o consultanta gratuita</a> — raspuns in maxim 2 ore.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ai ales varianta potrivita?</h2>
+      <p>Completeaza formularul si iti trimitem o oferta personalizata cu pret, livrare si montaj.</p>
+      <a href="contact.html" class="btn-primary">Cere oferta acum</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>CrisTermo</h4>
+        <p>Experti in incalzire si climatizare langa tine. Consultanta gratuita si intermediere pentru centrale termice.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Pagini</h4>
+        <ul>
+          <li><a href="index.html">Acasa</a></li>
+          <li><a href="servicii.html">Servicii</a></li>
+          <li><a href="produse.html">Produse</a></li>
+          <li><a href="informatii-utile.html">Informatii utile</a></li>
+          <li><a href="ghid.html">Ghid</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+40775175897">0775 175 897</a><br>
+          <a href="mailto:ovidiucristiand@gmail.com">ovidiucristiand@gmail.com</a>
+        </p>
+        <p style="margin-top: 12px;">Ovidiu Cristian Diaconu</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 CrisTermo. Toate drepturile rezervate.
+    </div>
+  </footer>
+
+  <script>
+    function calculateKW() {
+      var input = document.getElementById('kw-input');
+      var result = document.getElementById('kw-result');
+      var m2 = parseInt(input.value, 10);
+      if (!m2 || m2 < 20) {
+        result.innerHTML = 'Te rugam sa introduci o suprafata valida (minim 20 m&sup2;).';
+        result.classList.add('is-visible');
+        return;
+      }
+      var needed = Math.ceil(m2 / 10);
+      var cards = document.querySelectorAll('.variant-card');
+      var chosen = null;
+      cards.forEach(function(c) { c.classList.remove('is-recommended'); });
+      cards.forEach(function(c) {
+        var kw = parseInt(c.dataset.kw, 10);
+        if (!chosen && kw >= needed) { chosen = c; }
+      });
+      if (chosen) {
+        chosen.classList.add('is-recommended');
+        var chosenKW = chosen.dataset.kw;
+        result.innerHTML = 'Pentru <strong>' + m2 + ' m&sup2;</strong> iti recomandam varianta <strong>TIS Pro ' + chosenKW + ' kW</strong>. Am marcat-o mai jos.';
+        result.classList.add('is-visible');
+        setTimeout(function() { chosen.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+      } else {
+        result.innerHTML = 'Pentru o suprafata atat de mare (<strong>' + m2 + ' m&sup2;</strong>) recomandam <a href="tis-uni.html" style="color:#E8732A;">TIS Uni</a> (pana la 95 kW) sau o <a href="contact.html" style="color:#E8732A;">consultanta personalizata</a>.';
+        result.classList.add('is-visible');
+      }
+    }
+    document.getElementById('kw-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') calculateKW();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIS Pellet Combi — 15 si 25 kW | CrisTermo</title>
+  <meta name="description" content="Cazan TIS Pellet Combi cu buncar integrat. 2 variante: 15 kW (150 m²) si 25 kW (250 m²). Eficienta 93%, autonomie 3-7 zile, alimentare automata.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .breadcrumb { color:#E8732A; font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+    .breadcrumb a { color:#E8732A; text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .kw-selector { background: linear-gradient(135deg, #FFF2E8 0%, #FFE4D0 100%); border: 2px solid #E8732A; border-radius: 20px; padding: 32px 28px; max-width: 680px; margin: 0 auto 48px; box-shadow: 0 8px 24px rgba(232, 115, 42, 0.12); }
+    .kw-selector h2 { font-size: 1.4rem; color: #2D3436; margin-bottom: 8px; text-align: center; }
+    .kw-selector p.kw-subtitle { text-align: center; color: #636E72; font-size: 0.92rem; margin-bottom: 24px; }
+    .kw-form { display: flex; gap: 12px; align-items: stretch; max-width: 440px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .kw-form label { display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #F5E6D3; border-radius: 12px; padding: 4px 6px 4px 18px; flex: 1; min-width: 220px; transition: border-color 0.2s; }
+    .kw-form label:focus-within { border-color: #E8732A; }
+    .kw-form label span { color: #636E72; font-size: 0.88rem; white-space: nowrap; }
+    .kw-form input { border: none; outline: none; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; color: #2D3436; width: 100%; padding: 10px 8px; background: transparent; }
+    .kw-form .unit { color: #E8732A; font-weight: 600; padding-right: 12px; }
+    .kw-form button { background: #E8732A; color: #FFFFFF; border: none; border-radius: 12px; padding: 0 24px; font-family: 'Poppins', sans-serif; font-size: 0.92rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; white-space: nowrap; }
+    .kw-form button:hover { background: #D4611F; transform: translateY(-1px); }
+    .kw-result { display: none; margin-top: 20px; padding: 14px 18px; background: #FFFFFF; border-left: 4px solid #E8732A; border-radius: 8px; font-size: 0.95rem; color: #2D3436; }
+    .kw-result.is-visible { display: block; }
+    .kw-result strong { color: #E8732A; }
+    .kw-note { text-align: center; font-size: 0.82rem; color: #636E72; margin-top: 18px; font-style: italic; }
+    .variant-card.is-recommended { border: 3px solid #E8732A; box-shadow: 0 12px 32px rgba(232, 115, 42, 0.25); transform: translateY(-4px); position: relative; }
+    .variant-card.is-recommended::before { content: "POTRIVIT PENTRU TINE"; position: absolute; top: 12px; right: 12px; background: #E8732A; color: #FFFFFF; font-size: 0.68rem; font-weight: 700; padding: 5px 11px; border-radius: 20px; letter-spacing: 0.5px; z-index: 2; box-shadow: 0 2px 8px rgba(232, 115, 42, 0.3); }
+    .variant-card { transition: all 0.35s ease; }
+    .price-box { background:#FFF8F0; border-left:4px solid #E8732A; padding:10px 14px; margin:8px 0 16px; border-radius:6px; }
+    .price-ron { color:#E8732A; font-weight:700; font-size:1.1rem; display:block; }
+    .price-eur { color:#636E72; font-size:0.82rem; display:block; }
+    .info-note { background: #FFF8F0; border-radius: 16px; padding: 32px; margin-top: 48px; }
+    .info-note h3 { color: #2D3436; margin-bottom: 12px; font-size: 1.15rem; }
+    .info-note p { color: #636E72; font-size: 0.92rem; line-height: 1.7; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Cris<span>Termo</span><span class="navbar-brand-sub">Partener TermoShop</span></a>
+      <button class="navbar-toggle" aria-label="Meniu" onclick="document.querySelector('.navbar-links').classList.toggle('open')">&#9776;</button>
+      <ul class="navbar-links">
+        <li><a href="index.html">Acasa</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="produse.html" class="active">Produse</a></li>
+        <li><a href="informatii-utile.html">Informatii utile</a></li>
+        <li><a href="ghid.html">Ghid</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="navbar-cta">Cere consultanta</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="breadcrumb">
+        <a href="produse.html?cat=lemne">&larr; Produse</a> / <a href="tis.html">TIS</a> / <a href="tis-pellet.html">Pellet</a> / Combi
+      </p>
+      <h1>TIS Pellet <span>Combi</span></h1>
+      <p>Cazan automat pe peleti cu buncar integrat deasupra corpului. Design compact, ideal pentru centrale termice mici. Eficienta 93%, autonomie 3–7 zile pe o singura incarcare.</p>
+    </div>
+  </section>
+
+  <section style="background:#FFFFFF; padding:60px 20px 20px;">
+    <div class="container">
+
+      <div class="kw-selector">
+        <h2>De cata putere ai nevoie?</h2>
+        <p class="kw-subtitle">Introdu suprafata casei tale si iti recomandam varianta potrivita</p>
+        <div class="kw-form">
+          <label>
+            <span>Suprafata:</span>
+            <input type="number" id="kw-input" min="20" max="300" step="10" placeholder="150">
+            <span class="unit">m&sup2;</span>
+          </label>
+          <button onclick="calculateKW()">Calculeaza</button>
+        </div>
+        <div class="kw-result" id="kw-result"></div>
+        <p class="kw-note">
+          Formula orientativa: ~1 kW / 10 m&sup2; (pentru case cu izolatie normala). Pentru calcul exact, <a href="contact.html" style="color:#E8732A;">cere o consultanta gratuita</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:#FFFFFF; padding:20px 20px 60px;">
+    <div class="container">
+
+      <h2 style="text-align:center; font-size:1.4rem; color:#2D3436; margin-bottom:32px;">Toate variantele disponibile</h2>
+
+      <div class="catalog-grid">
+
+        <div class="catalog-card variant-card" data-kw="15">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/04/TIS-Pellet.png" alt="TIS Pellet Combi 15 kW" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">15 kW</span>
+            <h3 class="catalog-card-title">Pellet Combi 15 kW</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Putere</span><span class="spec-value">15 kW</span></li>
+              <li><span class="spec-label">Suprafata</span><span class="spec-value">~150 m&sup2;</span></li>
+              <li><span class="spec-label">Eficienta</span><span class="spec-value">93%</span></li>
+              <li><span class="spec-label">Buncar</span><span class="spec-value">296 litri</span></li>
+              <li><span class="spec-label">Autonomie</span><span class="spec-value">3–7 zile</span></li>
+              <li><span class="spec-label">Consum peleti</span><span class="spec-value">3 kg/h</span></li>
+            </ul>
+            <div class="price-box"><span class="price-ron">17.085 lei</span><span class="price-eur">~3.417,00 &euro;</span></div>
+            <div class="catalog-card-footer">
+              <a href="https://termoshop.ro/wp-content/uploads/2023/04/MANUAL-TIS-PELLET-SI-DUO-PELLET_2.5_TIS.pdf" target="_blank" rel="noopener" class="catalog-card-manual">&#128196; Manual PDF</a>
+              <a href="contact.html?produs=TIS+Pellet+Combi+15kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card variant-card" data-kw="25">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/04/TIS-Pellet.png" alt="TIS Pellet Combi 25 kW" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">25 kW</span>
+            <h3 class="catalog-card-title">Pellet Combi 25 kW</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Putere</span><span class="spec-value">25 kW</span></li>
+              <li><span class="spec-label">Suprafata</span><span class="spec-value">~250 m&sup2;</span></li>
+              <li><span class="spec-label">Eficienta</span><span class="spec-value">93%</span></li>
+              <li><span class="spec-label">Buncar</span><span class="spec-value">230 litri</span></li>
+              <li><span class="spec-label">Autonomie</span><span class="spec-value">3–7 zile</span></li>
+              <li><span class="spec-label">Greutate</span><span class="spec-value">219 kg</span></li>
+            </ul>
+            <div class="price-box"><span class="price-ron">17.748 lei</span><span class="price-eur">~3.549,60 &euro;</span></div>
+            <div class="catalog-card-footer">
+              <a href="https://termoshop.ro/wp-content/uploads/2023/04/MANUAL-TIS-PELLET-SI-DUO-PELLET_2.5_TIS.pdf" target="_blank" rel="noopener" class="catalog-card-manual">&#128196; Manual PDF</a>
+              <a href="contact.html?produs=TIS+Pellet+Combi+25kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info-note">
+        <h3>De ce TIS Pellet Combi?</h3>
+        <p><strong style="color:#E8732A;">Buncar integrat:</strong> Buncarul de 230–296 litri e montat direct deasupra corpului cazanului — instalatia ocupa mai putin spatiu decat sistemele cu buncar extern.</p>
+        <p><strong style="color:#E8732A;">Eficienta 93%:</strong> Arzator vertical cu curatare automata, sonda de flacara si modul OPS cu sonda lambda — una dintre cele mai eficiente solutii pe peleti din aceasta gama de pret.</p>
+        <p><strong style="color:#E8732A;">Automatizare completa:</strong> Controlerul TIS-tronic 296L cu ecran LCD 4,3" regleaza arderea independent. Setezi temperatura si uiti de cazan cateva zile.</p>
+        <p><strong style="color:#E8732A;">Vrei mai multa putere?</strong> Uita-te la <a href="tis-new-pellet.html" style="color:#E8732A;">TIS New Pellet</a> (40–95 kW) pentru suprafete mai mari.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ai ales varianta potrivita?</h2>
+      <p>Completeaza formularul si iti trimitem o oferta personalizata cu pret, livrare si montaj.</p>
+      <a href="contact.html" class="btn-primary">Cere oferta acum</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>CrisTermo</h4>
+        <p>Experti in incalzire si climatizare langa tine. Consultanta gratuita si intermediere pentru centrale termice.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Pagini</h4>
+        <ul>
+          <li><a href="index.html">Acasa</a></li>
+          <li><a href="servicii.html">Servicii</a></li>
+          <li><a href="produse.html">Produse</a></li>
+          <li><a href="informatii-utile.html">Informatii utile</a></li>
+          <li><a href="ghid.html">Ghid</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+40775175897">0775 175 897</a><br>
+          <a href="mailto:ovidiucristiand@gmail.com">ovidiucristiand@gmail.com</a>
+        </p>
+        <p style="margin-top: 12px;">Ovidiu Cristian Diaconu</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 CrisTermo. Toate drepturile rezervate.
+    </div>
+  </footer>
+
+  <script>
+    function calculateKW() {
+      var input = document.getElementById('kw-input');
+      var result = document.getElementById('kw-result');
+      var m2 = parseInt(input.value, 10);
+      if (!m2 || m2 < 20) {
+        result.innerHTML = 'Te rugam sa introduci o suprafata valida (minim 20 m&sup2;).';
+        result.classList.add('is-visible');
+        return;
+      }
+      var needed = Math.ceil(m2 / 10);
+      var cards = document.querySelectorAll('.variant-card');
+      var chosen = null;
+      cards.forEach(function(c) { c.classList.remove('is-recommended'); });
+      cards.forEach(function(c) {
+        var kw = parseInt(c.dataset.kw, 10);
+        if (!chosen && kw >= needed) { chosen = c; }
+      });
+      if (chosen) {
+        chosen.classList.add('is-recommended');
+        var chosenKW = chosen.dataset.kw;
+        result.innerHTML = 'Pentru <strong>' + m2 + ' m&sup2;</strong> iti recomandam varianta <strong>TIS Pellet Combi ' + chosenKW + ' kW</strong>. Am marcat-o mai jos.';
+        result.classList.add('is-visible');
+        setTimeout(function() { chosen.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+      } else {
+        result.innerHTML = 'Pentru suprafete peste 250 m&sup2; recomandam <a href="tis-new-pellet.html" style="color:#E8732A;">TIS New Pellet</a> (40–95 kW) sau o <a href="contact.html" style="color:#E8732A;">consultanta personalizata</a>.';
+        result.classList.add('is-visible');
+      }
+    }
+    document.getElementById('kw-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') calculateKW();
+    });
+  </script>
+
+</body>
+</html>

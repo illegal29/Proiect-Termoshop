@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kronas Standard 18-26 kW — Cazan pe lemne si carbune | CrisTermo</title>
+  <meta name="description" content="Kronas Standard disponibil in 18, 22 si 26 kW. Otel 5 mm, eficienta 85%, combustibil lemne si carbune. Pret de la 4.716 lei. Livrare si montaj.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .breadcrumb { color:#E8732A; font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+    .breadcrumb a { color:#E8732A; text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .kw-selector { background:#FFF8F0; border-radius:16px; padding:32px; margin-bottom:40px; text-align:center; }
+    .kw-selector h2 { color:#2D3436; font-size:1.2rem; margin-bottom:8px; }
+    .kw-selector p { color:#636E72; font-size:0.9rem; margin-bottom:20px; }
+    .kw-form { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; }
+    .kw-form input { padding:10px 16px; border:2px solid #E8732A; border-radius:8px; font-size:1rem; width:140px; outline:none; }
+    .kw-form button { padding:10px 24px; background:#E8732A; color:#fff; border:none; border-radius:8px; font-size:1rem; font-weight:600; cursor:pointer; }
+    .kw-form button:hover { background:#d0621f; }
+    .kw-result { margin-top:16px; font-weight:600; color:#E8732A; font-size:1rem; min-height:24px; }
+    .variant-card { border:2px solid #F0F0F0; border-radius:16px; padding:28px; margin-bottom:24px; transition:border-color 0.2s; }
+    .variant-card.is-recommended { border-color:#E8732A; position:relative; }
+    .variant-card.is-recommended::before { content:"POTRIVIT PENTRU TINE"; position:absolute; top:-13px; left:24px; background:#E8732A; color:#fff; font-size:0.72rem; font-weight:700; letter-spacing:1px; padding:3px 12px; border-radius:20px; }
+    .price-box { background:#FFF8F0; border-left:4px solid #E8732A; padding:10px 14px; margin:8px 0 16px; border-radius:6px; }
+    .price-ron { color:#E8732A; font-weight:700; font-size:1.1rem; display:block; }
+    .price-eur { color:#636E72; font-size:0.82rem; display:block; }
+    .info-note { background:#FFF8F0; border-radius:16px; padding:32px; margin-top:48px; }
+    .info-note h3 { color:#2D3436; margin-bottom:12px; font-size:1.15rem; }
+    .info-note p { color:#636E72; font-size:0.92rem; line-height:1.7; margin-bottom:8px; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Cris<span>Termo</span><span class="navbar-brand-sub">Partener TermoShop</span></a>
+      <button class="navbar-toggle" aria-label="Meniu" onclick="document.querySelector('.navbar-links').classList.toggle('open')">&#9776;</button>
+      <ul class="navbar-links">
+        <li><a href="index.html">Acasa</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="produse.html" class="active">Produse</a></li>
+        <li><a href="informatii-utile.html">Informatii utile</a></li>
+        <li><a href="ghid.html">Ghid</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="navbar-cta">Cere consultanta</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="breadcrumb">
+        <a href="produse.html?cat=lemne">&larr; Produse</a> / <a href="kronas.html">Kronas</a> / Standard
+      </p>
+      <h1>Kronas <span>Standard</span></h1>
+      <p>Cazan pe lemne si carbune cu constructie solida din otel de 5 mm. Disponibil in 18, 22 si 26 kW — potrivit pentru case si gospodarii de 120–180 m&sup2;.</p>
+    </div>
+  </section>
+
+  <section style="background:#FFFFFF; padding:60px 20px;">
+    <div class="container">
+
+      <!-- KW Selector -->
+      <div class="kw-selector">
+        <h2>Calculeaza puterea necesara</h2>
+        <p>Introdu suprafata casei (m&sup2;) si iti indicam varianta recomandata</p>
+        <div class="kw-form">
+          <input type="number" id="suprafata" placeholder="ex: 130" min="1" max="500">
+          <button onclick="calculateKW()">Calculeaza</button>
+        </div>
+        <div class="kw-result" id="kw-result"></div>
+      </div>
+
+      <!-- Variants -->
+      <div id="variants-list">
+
+        <div class="variant-card" data-kw="18">
+          <img src="IMAGES/Kronas%20standard-26%20kw.jpeg" alt="Kronas Standard 18 kW" loading="lazy" style="width:100%;max-width:300px;display:block;margin:0 auto 20px;border-radius:12px;">
+          <h3 style="color:#2D3436; font-size:1.2rem; margin-bottom:16px;">Kronas Standard 18 kW</h3>
+          <ul class="catalog-card-specs" style="margin-bottom:16px;">
+            <li><span class="spec-label">Putere termica</span><span class="spec-value">18 kW</span></li>
+            <li><span class="spec-label">Suprafata incalzita</span><span class="spec-value">120–140 m&sup2;</span></li>
+            <li><span class="spec-label">Eficienta</span><span class="spec-value">85%</span></li>
+            <li><span class="spec-label">Volum apa</span><span class="spec-value">58 litri</span></li>
+            <li><span class="spec-label">Greutate</span><span class="spec-value">204 kg</span></li>
+            <li><span class="spec-label">Grosime otel</span><span class="spec-value">5 mm</span></li>
+            <li><span class="spec-label">Volum focar</span><span class="spec-value">87 litri</span></li>
+            <li><span class="spec-label">Diametru cos</span><span class="spec-value">180 mm</span></li>
+            <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, biomasa</span></li>
+          </ul>
+          <div class="price-box">
+            <span class="price-ron">4.716 lei</span>
+            <span class="price-eur">~943,20 &euro;</span>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <a href="contact.html?produs=Kronas+Standard+18kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+          </div>
+        </div>
+
+        <div class="variant-card" data-kw="22">
+          <img src="IMAGES/Kronas%20standard-26%20kw.jpeg" alt="Kronas Standard 22 kW" loading="lazy" style="width:100%;max-width:300px;display:block;margin:0 auto 20px;border-radius:12px;">
+          <h3 style="color:#2D3436; font-size:1.2rem; margin-bottom:16px;">Kronas Standard 22 kW</h3>
+          <ul class="catalog-card-specs" style="margin-bottom:16px;">
+            <li><span class="spec-label">Putere termica</span><span class="spec-value">22 kW</span></li>
+            <li><span class="spec-label">Suprafata incalzita</span><span class="spec-value">130–150 m&sup2;</span></li>
+            <li><span class="spec-label">Eficienta</span><span class="spec-value">85%</span></li>
+            <li><span class="spec-label">Volum apa</span><span class="spec-value">65 litri</span></li>
+            <li><span class="spec-label">Greutate</span><span class="spec-value">210 kg</span></li>
+            <li><span class="spec-label">Grosime otel</span><span class="spec-value">5 mm</span></li>
+            <li><span class="spec-label">Volum focar</span><span class="spec-value">102 litri</span></li>
+            <li><span class="spec-label">Diametru cos</span><span class="spec-value">180 mm</span></li>
+            <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, biomasa</span></li>
+          </ul>
+          <div class="price-box">
+            <span class="price-ron">5.640 lei</span>
+            <span class="price-eur">~1.128,00 &euro;</span>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <a href="contact.html?produs=Kronas+Standard+22kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+          </div>
+        </div>
+
+        <div class="variant-card" data-kw="26">
+          <img src="IMAGES/Kronas%20standard-26%20kw.jpeg" alt="Kronas Standard 26 kW" loading="lazy" style="width:100%;max-width:300px;display:block;margin:0 auto 20px;border-radius:12px;">
+          <h3 style="color:#2D3436; font-size:1.2rem; margin-bottom:16px;">Kronas Standard 26 kW</h3>
+          <ul class="catalog-card-specs" style="margin-bottom:16px;">
+            <li><span class="spec-label">Putere termica</span><span class="spec-value">26 kW</span></li>
+            <li><span class="spec-label">Suprafata incalzita</span><span class="spec-value">160–180 m&sup2;</span></li>
+            <li><span class="spec-label">Eficienta</span><span class="spec-value">85%</span></li>
+            <li><span class="spec-label">Volum apa</span><span class="spec-value">69 litri</span></li>
+            <li><span class="spec-label">Greutate</span><span class="spec-value">219 kg</span></li>
+            <li><span class="spec-label">Grosime otel</span><span class="spec-value">5 mm</span></li>
+            <li><span class="spec-label">Diametru cos</span><span class="spec-value">180 mm</span></li>
+            <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, biomasa</span></li>
+          </ul>
+          <div class="price-box">
+            <span class="price-ron">6.029 lei</span>
+            <span class="price-eur">~1.205,80 &euro;</span>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <a href="contact.html?produs=Kronas+Standard+26kW" class="btn-primary catalog-card-cta">Cere oferta</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info-note">
+        <h3>De ce Kronas Standard?</h3>
+        <p><strong style="color:#E8732A;">Constructie solida:</strong> Otel de 5 mm grosime rezistent la socuri termice repetate. Presiune maxima 1,5 bar, instalare pe sol.</p>
+        <p><strong style="color:#E8732A;">Combustibil versatil:</strong> Functioneaza cu lemne (recomandat), carbune si biomasa — flexibilitate maxima la aprovizionare.</p>
+        <p><strong style="color:#E8732A;">Fabricatie:</strong> Produs in Ucraina cu standard ridicat de calitate, folosit cu succes in mii de gospodarii din Romania.</p>
+        <p><strong style="color:#E8732A;">Nu esti sigur ce putere ai nevoie?</strong> <a href="ghid.html" style="color:#E8732A;">Foloseste ghidul nostru</a> sau <a href="contact.html" style="color:#E8732A;">cere o consultanta gratuita</a> — raspuns in maxim 2 ore.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Vrei o oferta pentru Kronas Standard?</h2>
+      <p>Completeaza formularul si iti trimitem pret, disponibilitate, livrare si optiuni de montaj.</p>
+      <a href="contact.html?produs=Kronas+Standard" class="btn-primary">Cere oferta acum</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section"><h4>CrisTermo</h4><p>Experti in incalzire si climatizare langa tine.</p></div>
+      <div class="footer-section"><h4>Pagini</h4><ul><li><a href="index.html">Acasa</a></li><li><a href="servicii.html">Servicii</a></li><li><a href="produse.html">Produse</a></li><li><a href="informatii-utile.html">Informatii utile</a></li><li><a href="ghid.html">Ghid</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-section"><h4>Contact</h4><p><a href="tel:+40775175897">0775 175 897</a><br><a href="mailto:ovidiucristiand@gmail.com">ovidiucristiand@gmail.com</a></p><p style="margin-top:12px;">Ovidiu Cristian Diaconu</p></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 CrisTermo. Toate drepturile rezervate.</div>
+  </footer>
+
+  <script>
+    function calculateKW() {
+      var suprafata = parseFloat(document.getElementById('suprafata').value);
+      var resultEl = document.getElementById('kw-result');
+      if (!suprafata || suprafata <= 0) {
+        resultEl.textContent = 'Introdu o suprafata valida.';
+        return;
+      }
+      var needed = Math.ceil(suprafata / 10);
+      var cards = document.querySelectorAll('#variants-list .variant-card');
+      var found = null;
+      cards.forEach(function(card) {
+        card.classList.remove('is-recommended');
+        var kw = parseInt(card.dataset.kw);
+        if (!found && kw >= needed) { found = card; }
+      });
+      if (found) {
+        found.classList.add('is-recommended');
+        var kw = found.dataset.kw;
+        resultEl.textContent = 'Pentru ' + suprafata + ' m\u00B2 recomandam varianta de ' + kw + ' kW.';
+        setTimeout(function() { found.scrollIntoView({ behavior:'smooth', block:'center' }); }, 100);
+      } else {
+        resultEl.textContent = 'Suprafata depaseste gama Standard. Contacteaza-ne pentru o solutie personalizata.';
+      }
+    }
+    document.getElementById('suprafata').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') calculateKW();
+    });
+  </script>
+
+</body>
+</html>

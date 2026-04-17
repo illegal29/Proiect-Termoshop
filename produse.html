@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produse — CrisTermo</title>
+  <meta name="description" content="Catalog produse pentru incalzire si climatizare: cazane pe lemne, cazane pe peleti, pompe de caldura, climatizare. Livrare si montaj in toata tara.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Cris<span>Termo</span><span class="navbar-brand-sub">Partener TermoShop</span></a>
+      <button class="navbar-toggle" aria-label="Meniu" onclick="document.querySelector('.navbar-links').classList.toggle('open')">&#9776;</button>
+      <ul class="navbar-links">
+        <li><a href="index.html">Acasa</a></li>
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="produse.html" class="active">Produse</a></li>
+        <li><a href="informatii-utile.html">Informatii utile</a></li>
+        <li><a href="ghid.html">Ghid</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="navbar-cta">Cere consultanta</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Catalog <span>produse</span></h1>
+      <p>Cazane, pompe de caldura, climatizare si mai mult. Consultanta gratuita pentru alegerea potrivita.</p>
+    </div>
+  </section>
+
+  <!-- Catalog -->
+  <section style="background-color: #FFFFFF; padding: 60px 20px;">
+    <div class="container">
+
+      <!-- Filter Tabs -->
+      <div class="catalog-filter">
+        <button class="filter-btn active" onclick="filterCatalog('toate', this)">Toate produsele</button>
+        <button class="filter-btn" onclick="filterCatalog('lemne', this)">Cazane pe lemne</button>
+        <button class="filter-btn" onclick="filterCatalog('peleti', this)">Cazane pe peleti</button>
+        <button class="filter-btn" onclick="filterCatalog('pompe', this)">Pompe de caldura</button>
+        <button class="filter-btn" onclick="filterCatalog('climatizare', this)">Climatizare</button>
+        <button class="filter-btn" onclick="filterCatalog('ac-split', this)">AC Split Perete</button>
+        <button class="filter-btn" onclick="filterCatalog('ac-speciale', this)">AC Tipuri Speciale</button>
+        <button class="filter-btn" onclick="filterCatalog('boilere', this)">Boilere &amp; Puffere</button>
+        <button class="filter-btn" onclick="filterCatalog('calorifere', this)">Calorifere</button>
+        <button class="filter-btn" onclick="filterCatalog('pardoseala', this)">Incalzire pardoseala</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="catalog-grid" id="catalog-grid">
+
+        <!-- ===== WARMLINE (brand card) ===== -->
+        <div class="catalog-card" data-cat="lemne peleti">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/05/Screenshot-2023-05-02-104646.png" alt="Gama Warmline" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Warmline</span>
+            <h3 class="catalog-card-title">Gama completa Warmline</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Modele</span><span class="spec-value">Premium, Uni, Eco, Black Pellet, Monogravity</span></li>
+              <li><span class="spec-label">Puteri</span><span class="spec-value">17 – 200 kW</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, peleti</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">6.288 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="warmline.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== TIS (brand card) ===== -->
+        <div class="catalog-card" data-cat="lemne peleti">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/04/tis-uni-fara-automatizare.png" alt="Gama TIS" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">TIS</span>
+            <h3 class="catalog-card-title">Gama completa TIS</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Modele</span><span class="spec-value">Uni, Pro, Pellet Combi, New Pellet</span></li>
+              <li><span class="spec-label">Puteri</span><span class="spec-value">15 – 95 kW</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, peleti</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">6.138 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="tis.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== NEUS (brand card) ===== -->
+        <div class="catalog-card" data-cat="lemne">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/07/iconeusturbo1-500x500-800x800-1.png" alt="Gama Neus" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Neus</span>
+            <h3 class="catalog-card-title">Gama completa Neus</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Modele</span><span class="spec-value">Compact, Praktik, Duo Uni, Trio Uni, Turbo, cu Plita</span></li>
+              <li><span class="spec-label">Puteri</span><span class="spec-value">12 – 95 kW</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, brichete</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">5.130 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="neus.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== KRONAS (brand card) ===== -->
+        <div class="catalog-card" data-cat="lemne">
+          <img class="catalog-card-image" src="IMAGES/Kronas%20standard-26%20kw.jpeg" alt="Gama Kronas" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Kronas</span>
+            <h3 class="catalog-card-title">Gama completa Kronas</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Modele</span><span class="spec-value">Standard, Eco</span></li>
+              <li><span class="spec-label">Puteri</span><span class="spec-value">18 – 26 kW</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, biomasa</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">4.716 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="kronas.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== ALMAX (brand card) ===== -->
+        <div class="catalog-card" data-cat="lemne">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2024/11/almax-d.png" alt="Gama Almax" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Almax</span>
+            <h3 class="catalog-card-title">Gama completa Almax</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Modele</span><span class="spec-value">Class D, Class B, cu Plita VP</span></li>
+              <li><span class="spec-label">Puteri</span><span class="spec-value">18 – 30 kW</span></li>
+              <li><span class="spec-label">Combustibil</span><span class="spec-value">Lemne, carbune, brichete</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">4.819 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="almax.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== BURNIT (brand card) ===== -->
+        <div class="catalog-card" data-cat="lemne">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/uploads/2023/07/brn.png" alt="Gama Burnit" loading="lazy">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Burnit</span>
+            <h3 class="catalog-card-title">Gama completa Burnit</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Modele</span><span class="spec-value">NWB, NWB Prime</span></li>
+              <li><span class="spec-label">Puteri</span><span class="spec-value">25 – 110 kW</span></li>
+              <li><span class="spec-label">Certificare</span><span class="spec-value">EN 303-5</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">4.690 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="burnit.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SUNSYSTEM (brand card) ===== -->
+        <div class="catalog-card" data-cat="pompe">
+          <!-- TODO: adauga src imagine produs de pe termoshop.ro -->
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="Pompe de Caldura Sunsystem" loading="lazy" style="background:#FFF8F0;">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Sunsystem</span>
+            <h3 class="catalog-card-title">Pompe de Căldură Sunsystem</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Modele</span><span class="spec-value">Mono Plus, Split Plus</span></li>
+              <li><span class="spec-label">Puteri</span><span class="spec-value">6 – 20 kW (4+5 variante)</span></li>
+              <li><span class="spec-label">Refrigerant</span><span class="spec-value">R32, clasa A+++</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">10.700 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="sunsystem.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== TERMOSHOP R290 (brand card) ===== -->
+        <div class="catalog-card" data-cat="pompe">
+          <!-- TODO: adauga src imagine produs de pe termoshop.ro -->
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="Pompa de Caldura Termoshop R290" loading="lazy" style="background:#FFF8F0;">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Termoshop</span>
+            <h3 class="catalog-card-title">Pompă de Căldură R290</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Tip</span><span class="spec-value">Monobloc aer-apa</span></li>
+              <li><span class="spec-label">Puteri</span><span class="spec-value">6, 9, 20 kW</span></li>
+              <li><span class="spec-label">Refrigerant</span><span class="spec-value">R290 natural, A+++</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">12.255 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="termoshop-r290.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== ROTENSO — AC SPLIT PERETE ===== -->
+        <div class="catalog-card" data-cat="climatizare ac-split">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="AC Split Perete Rotenso" loading="lazy" style="background:#FFF8F0;">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Rotenso</span>
+            <h3 class="catalog-card-title">AC Split de Perete</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Tip</span><span class="spec-value">Montaj pe perete interior, pentru camere si apartamente</span></li>
+              <li><span class="spec-label">Serii</span><span class="spec-value">Roni, Elis X, Imoto X, Revio X, Ukura, Ukura X, Versu</span></li>
+              <li><span class="spec-label">BTU</span><span class="spec-value">9.000 – 24.000 BTU</span></li>
+              <li><span class="spec-label">Clasa</span><span class="spec-value">A++ si A+++, R32</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">1.366 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="rotenso.html?section=split" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== ROTENSO — AC TIPURI SPECIALE ===== -->
+        <div class="catalog-card" data-cat="climatizare ac-speciale">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="AC Tipuri Speciale Rotenso" loading="lazy" style="background:#FFF8F0;">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Rotenso</span>
+            <h3 class="catalog-card-title">AC Tipuri Speciale</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Tip</span><span class="spec-value">Spatii comerciale, restaurante, birouri, spatii cu tavane inalte</span></li>
+              <li><span class="spec-label">Tipuri</span><span class="spec-value">Consola, Caseta 360°, Tavan/Podea, Canal, Multi-split</span></li>
+              <li><span class="spec-label">BTU</span><span class="spec-value">9.000 – 60.000 BTU</span></li>
+              <li><span class="spec-label">Clasa</span><span class="spec-value">A++ si A+++, R32</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">3.958 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="rotenso.html?section=speciale" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== BOILERE TERMOELECTRICE ===== -->
+        <div class="catalog-card" data-cat="boilere">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="Boilere Termoelectrice Sunsystem" loading="lazy" style="background:#FFF8F0;">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Sunsystem &amp; Ferroli</span>
+            <h3 class="catalog-card-title">Boilere Termoelectrice</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Serii</span><span class="spec-value">MB-L (standard), MB S1 (premium), Ferroli</span></li>
+              <li><span class="spec-label">Capacitati</span><span class="spec-value">80L, 100L, 120L, 150L</span></li>
+              <li><span class="spec-label">Compatibil cu</span><span class="spec-value">Orice centrala, pompa caldura, solar</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">880 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="sunsystem-boilere.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== CALORIFERE — ALUMINIU (cu configurator) ===== -->
+        <div class="catalog-card" data-cat="calorifere">
+          <div id="al-img-area">
+            <div class="card-img-demo" id="al-img-placeholder">
+              <svg width="56" height="50" viewBox="0 0 56 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="10" height="42" rx="2" stroke="#E8732A" stroke-width="2"/>
+                <rect x="15" y="4" width="10" height="42" rx="2" stroke="#E8732A" stroke-width="2"/>
+                <rect x="28" y="4" width="10" height="42" rx="2" stroke="#E8732A" stroke-width="2"/>
+                <rect x="41" y="4" width="10" height="42" rx="2" stroke="#E8732A" stroke-width="2"/>
+                <line x1="2" y1="14" x2="51" y2="14" stroke="#E8732A" stroke-width="1.5"/>
+                <line x1="2" y1="36" x2="51" y2="36" stroke="#E8732A" stroke-width="1.5"/>
+                <circle cx="2" cy="14" r="2.5" fill="#E8732A"/>
+                <circle cx="2" cy="36" r="2.5" fill="#E8732A"/>
+              </svg>
+              <span class="card-img-demo-brand" id="al-img-brand">Calorifere din Aluminiu</span>
+              <span class="card-img-demo-sub" id="al-img-sub">Selecteaza un brand mai jos</span>
+            </div>
+            <img class="catalog-card-image" id="al-img-photo" src="" alt="Calorifer Aluminiu" style="display:none;">
+          </div>
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Ferroli · Mirado · Oscar Tondo</span>
+            <h3 class="catalog-card-title">Calorifere din Aluminiu</h3>
+            <p style="color:#E8732A; font-style:italic; font-size:0.88rem; margin-bottom:14px;">&laquo;Incalzire rapida, greutate redusa, durata lunga&raquo;</p>
+            <div class="config-group">
+              <span class="config-label">Brand</span>
+              <div class="config-options" id="al-brand-opts">
+                <button class="config-btn" onclick="alSelectBrand('ferroli', this)">Ferroli PROTEO</button>
+                <button class="config-btn" onclick="alSelectBrand('mirado', this)">Mirado</button>
+                <button class="config-btn" onclick="alSelectBrand('oscar', this)">Oscar Tondo</button>
+              </div>
+            </div>
+            <div class="config-group" id="al-model-group" style="display:none">
+              <span class="config-label" id="al-model-label">Model</span>
+              <div class="config-options" id="al-model-opts"></div>
+            </div>
+            <div class="config-price" id="al-price" style="display:none">
+              <span class="config-price-label">Pret:</span>
+              <span class="config-price-value" id="al-price-value"></span>
+            </div>
+            <div class="catalog-card-footer" style="margin-top:16px;">
+              <span></span>
+              <a href="contact.html?produs=Calorifere+Aluminiu" class="btn-primary catalog-card-cta" id="al-cta">Cere oferta &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== CALORIFERE — OTEL PANOU ===== -->
+        <div class="catalog-card" data-cat="calorifere">
+          <div class="card-img-demo">
+            <svg width="60" height="50" viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="56" height="46" rx="3" stroke="#E8732A" stroke-width="2"/>
+              <rect x="8" y="2" width="44" height="46" rx="1" stroke="#E8732A" stroke-width="1.5"/>
+              <line x1="2" y1="12" x2="58" y2="12" stroke="#E8732A" stroke-width="1.5"/>
+              <line x1="2" y1="38" x2="58" y2="38" stroke="#E8732A" stroke-width="1.5"/>
+              <line x1="2" y1="25" x2="58" y2="25" stroke="#E8732A" stroke-width="1" stroke-dasharray="3 3"/>
+            </svg>
+            <span class="card-img-demo-brand">Rens T22</span>
+            <span class="card-img-demo-sub">Otel panou dublu · 37 dimensiuni</span>
+          </div>
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Rens</span>
+            <h3 class="catalog-card-title">Calorifere Otel Panou</h3>
+            <p style="color:#E8732A; font-style:italic; font-size:0.88rem; margin-bottom:14px;">&laquo;Cele mai populare — 37 variante, pret accesibil&raquo;</p>
+            <div class="config-group">
+              <span class="config-label">Inaltime</span>
+              <div class="config-options" id="otel-h-opts">
+                <button class="config-btn" onclick="rensSelectH('h300', this)">300mm</button>
+                <button class="config-btn" onclick="rensSelectH('h500', this)">500mm</button>
+                <button class="config-btn" onclick="rensSelectH('h600', this)">600mm</button>
+              </div>
+            </div>
+            <div class="config-group" id="otel-l-group" style="display:none">
+              <span class="config-label">Lungime</span>
+              <div class="config-options" id="otel-l-opts"></div>
+            </div>
+            <div class="config-price" id="otel-price" style="display:none">
+              <span class="config-price-label">Pret:</span>
+              <span class="config-price-value" id="otel-price-value"></span>
+            </div>
+            <div class="catalog-card-footer" style="margin-top:16px;">
+              <span></span>
+              <a href="contact.html?produs=Calorifere+Otel+Rens+T22" class="btn-primary catalog-card-cta" id="otel-cta">Cere oferta &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== CALORIFERE — BIMETAL ===== -->
+        <div class="catalog-card" data-cat="calorifere">
+          <div class="card-img-demo">
+            <svg width="56" height="50" viewBox="0 0 56 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="4" width="10" height="42" rx="2" stroke="#E8732A" stroke-width="2"/>
+              <rect x="15" y="4" width="10" height="42" rx="2" stroke="#E8732A" stroke-width="2"/>
+              <rect x="28" y="4" width="10" height="42" rx="2" stroke="#E8732A" stroke-width="2"/>
+              <rect x="41" y="4" width="10" height="42" rx="2" stroke="#E8732A" stroke-width="2"/>
+              <line x1="2" y1="14" x2="51" y2="14" stroke="#E8732A" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <line x1="2" y1="36" x2="51" y2="36" stroke="#E8732A" stroke-width="1.5" stroke-dasharray="2 2"/>
+            </svg>
+            <span class="card-img-demo-brand">Bimetal</span>
+            <span class="card-img-demo-sub">Otel + Aluminiu · Mirado · ASG · Kiran</span>
+          </div>
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Mirado · ASG · Kiran · Rens</span>
+            <h3 class="catalog-card-title">Calorifere Bimetal</h3>
+            <p style="color:#E8732A; font-style:italic; font-size:0.88rem; margin-bottom:14px;">&laquo;Rezistenta otelului + conductivitatea aluminiului&raquo;</p>
+            <div class="config-group">
+              <span class="config-label">Inaltime element</span>
+              <div class="config-options" id="bm-h-opts">
+                <button class="config-btn" onclick="bmSelectH('h300', this)">300mm</button>
+                <button class="config-btn" onclick="bmSelectH('h500', this)">500mm</button>
+              </div>
+            </div>
+            <div class="config-group" id="bm-model-group" style="display:none">
+              <span class="config-label">Brand / Finisaj</span>
+              <div class="config-options" id="bm-model-opts"></div>
+            </div>
+            <div class="config-price" id="bm-price" style="display:none">
+              <span class="config-price-label">Pret:</span>
+              <span class="config-price-value" id="bm-price-value"></span>
+            </div>
+            <div class="catalog-card-footer" style="margin-top:16px;">
+              <span></span>
+              <a href="contact.html?produs=Calorifere+Bimetal" class="btn-primary catalog-card-cta" id="bm-cta">Cere oferta &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== CALORIFERE — BAIE SCARITA ===== -->
+        <div class="catalog-card" data-cat="calorifere">
+          <div class="card-img-demo">
+            <svg width="40" height="56" viewBox="0 0 40 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="7" height="52" rx="2" stroke="#E8732A" stroke-width="2"/>
+              <rect x="31" y="2" width="7" height="52" rx="2" stroke="#E8732A" stroke-width="2"/>
+              <line x1="9" y1="11" x2="31" y2="11" stroke="#E8732A" stroke-width="1.5"/>
+              <line x1="9" y1="21" x2="31" y2="21" stroke="#E8732A" stroke-width="1.5"/>
+              <line x1="9" y1="31" x2="31" y2="31" stroke="#E8732A" stroke-width="1.5"/>
+              <line x1="9" y1="41" x2="31" y2="41" stroke="#E8732A" stroke-width="1.5"/>
+              <line x1="9" y1="47" x2="31" y2="47" stroke="#E8732A" stroke-width="1.5"/>
+            </svg>
+            <span class="card-img-demo-brand">Radiatoare Baie</span>
+            <span class="card-img-demo-sub">Scarita · portprosop · Deffi</span>
+          </div>
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Deffi &amp; altele</span>
+            <h3 class="catalog-card-title">Radiatoare Baie (Scarita)</h3>
+            <p style="color:#E8732A; font-style:italic; font-size:0.88rem; margin-bottom:14px;">&laquo;Incalzire baie + uscator de prosoape in unul&raquo;</p>
+            <div class="config-group">
+              <span class="config-label">Latime</span>
+              <div class="config-options" id="baie-l-opts">
+                <button class="config-btn" onclick="baieSelectL('w400', this)">400mm</button>
+                <button class="config-btn" onclick="baieSelectL('w500', this)">500mm</button>
+                <button class="config-btn" onclick="baieSelectL('w600', this)">600mm</button>
+              </div>
+            </div>
+            <div class="config-group" id="baie-h-group" style="display:none">
+              <span class="config-label">Inaltime</span>
+              <div class="config-options" id="baie-h-opts"></div>
+            </div>
+            <div class="config-price" id="baie-price" style="display:none">
+              <span class="config-price-label">Pret:</span>
+              <span class="config-price-value" id="baie-price-value"></span>
+            </div>
+            <div class="catalog-card-footer" style="margin-top:16px;">
+              <span></span>
+              <a href="contact.html?produs=Radiator+Baie+Scarita" class="btn-primary catalog-card-cta" id="baie-cta">Cere oferta &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== PUFFERE ===== -->
+        <div class="catalog-card" data-cat="boilere">
+          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="Puffere Acumulatoare Sunsystem" loading="lazy" style="background:#FFF8F0;">
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Sunsystem</span>
+            <h3 class="catalog-card-title">Puffere &amp; Acumulatoare</h3>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Serii</span><span class="spec-value">SN, SON 2S, SWPN</span></li>
+              <li><span class="spec-label">Capacitati</span><span class="spec-value">150L – 1500L</span></li>
+              <li><span class="spec-label">Compatibil cu</span><span class="spec-value">Centrala, pompa caldura, solar</span></li>
+              <li><span class="spec-label">Pret de la</span><span class="spec-value">2.320 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="puffere.html" class="btn-primary catalog-card-cta">Vezi toate modelele &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== INCALZIRE PARDOSEALA ===== -->
+        <div class="catalog-card" data-cat="pardoseala">
+          <div class="card-img-demo">
+            <svg width="58" height="46" viewBox="0 0 58 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 8 L54 8" stroke="#E8732A" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M54 8 Q58 8 58 12 L58 18 Q58 22 54 22 L4 22" stroke="#E8732A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path d="M4 22 Q0 22 0 26 L0 32 Q0 36 4 36 L54 36" stroke="#E8732A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path d="M54 36 Q58 36 58 40 L58 44" stroke="#E8732A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </svg>
+            <span class="card-img-demo-brand">Incalzire in Pardoseala</span>
+            <span class="card-img-demo-sub">Sisteme complete · Termojet · Purmo · Salus</span>
+          </div>
+          <div class="catalog-card-body">
+            <span class="catalog-card-brand">Termojet · Purmo · TECE · Salus</span>
+            <h3 class="catalog-card-title">Incalzire in Pardoseala</h3>
+            <p style="color:#E8732A; font-style:italic; font-size:0.88rem; margin-bottom:12px;">&laquo;Confort termic uniform, eficienta maxima&raquo;</p>
+            <ul class="catalog-card-specs">
+              <li><span class="spec-label">Tevi PEX/PE-RT</span><span class="spec-value">de la 4 lei/m</span></li>
+              <li><span class="spec-label">Distribuitoare inox</span><span class="spec-value">2–15 circuite</span></li>
+              <li><span class="spec-label">Grup de amestec</span><span class="spec-value">de la 357 lei</span></li>
+              <li><span class="spec-label">Automatizari</span><span class="spec-value">de la 230 lei</span></li>
+            </ul>
+            <div class="catalog-card-footer">
+              <span></span>
+              <a href="incalzire-pardoseala.html" class="btn-primary catalog-card-cta">Exploreaza &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /catalog-grid -->
+
+      <p id="catalog-no-results" style="display:none; text-align:center; color:#636E72; margin-top:40px; font-size:0.95rem;">
+        Niciun produs in aceasta categorie. <a href="contact.html">Contacteaza-ne</a> pentru mai multe detalii.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Nu gasesti ce cauti?</h2>
+      <p>Avem acces la peste 10.000 de produse. Spune-ne ce ai nevoie si iti facem oferta personalizata in maxim 2 ore.</p>
+      <a href="contact.html" class="btn-primary">Cere consultanta gratuita</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>CrisTermo</h4>
+        <p>Experti in incalzire si climatizare langa tine. Consultanta gratuita si intermediere pentru centrale termice.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Pagini</h4>
+        <ul>
+          <li><a href="index.html">Acasa</a></li>
+          <li><a href="servicii.html">Servicii</a></li>
+          <li><a href="produse.html">Produse</a></li>
+          <li><a href="informatii-utile.html">Informatii utile</a></li>
+          <li><a href="ghid.html">Ghid</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+40775175897">0775 175 897</a><br>
+          <a href="mailto:ovidiucristiand@gmail.com">ovidiucristiand@gmail.com</a>
+        </p>
+        <p style="margin-top: 12px;">Ovidiu Cristian Diaconu</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 CrisTermo. Toate drepturile rezervate.
+    </div>
+  </footer>
+
+  <script>
+    function filterCatalog(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+
+      var cards = document.querySelectorAll('.catalog-card');
+      var visible = 0;
+      cards.forEach(function(card) {
+        if (cat === 'toate' || card.dataset.cat.split(' ').indexOf(cat) !== -1) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      var noResults = document.getElementById('catalog-no-results');
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    }
+    // ---- Rens T22 ----
+    const rensData = {
+      h300: { models: [
+        {label:'300 × 800mm', price:'230 lei', slug:'Rens+T22+300x800'},{label:'300 × 1000mm', price:'267 lei', slug:'Rens+T22+300x1000'},
+        {label:'300 × 1200mm', price:'310 lei', slug:'Rens+T22+300x1200'},{label:'300 × 1400mm', price:'352 lei', slug:'Rens+T22+300x1400'},
+        {label:'300 × 1600mm', price:'416 lei', slug:'Rens+T22+300x1600'},{label:'300 × 1800mm', price:'452 lei', slug:'Rens+T22+300x1800'},
+        {label:'300 × 2000mm', price:'490 lei', slug:'Rens+T22+300x2000'},
+      ]},
+      h500: { models: [
+        {label:'500 × 400mm', price:'165 lei', slug:'Rens+T22+500x400'},{label:'500 × 500mm', price:'191 lei', slug:'Rens+T22+500x500'},
+        {label:'500 × 600mm', price:'217 lei', slug:'Rens+T22+500x600'},{label:'500 × 700mm', price:'242 lei', slug:'Rens+T22+500x700'},
+        {label:'500 × 800mm', price:'276 lei', slug:'Rens+T22+500x800'},{label:'500 × 900mm', price:'301 lei', slug:'Rens+T22+500x900'},
+        {label:'500 × 1000mm', price:'326 lei', slug:'Rens+T22+500x1000'},{label:'500 × 1100mm', price:'353 lei', slug:'Rens+T22+500x1100'},
+        {label:'500 × 1200mm', price:'381 lei', slug:'Rens+T22+500x1200'},{label:'500 × 1300mm', price:'408 lei', slug:'Rens+T22+500x1300'},
+        {label:'500 × 1400mm', price:'436 lei', slug:'Rens+T22+500x1400'},{label:'500 × 1500mm', price:'464 lei', slug:'Rens+T22+500x1500'},
+        {label:'500 × 1600mm', price:'510 lei', slug:'Rens+T22+500x1600'},{label:'500 × 1800mm', price:'560 lei', slug:'Rens+T22+500x1800'},
+        {label:'500 × 2000mm', price:'611 lei', slug:'Rens+T22+500x2000'},
+      ]},
+      h600: { models: [
+        {label:'600 × 400mm', price:'158 lei', slug:'Rens+T22+600x400'},{label:'600 × 500mm', price:'184 lei', slug:'Rens+T22+600x500'},
+        {label:'600 × 600mm', price:'210 lei', slug:'Rens+T22+600x600'},{label:'600 × 700mm', price:'235 lei', slug:'Rens+T22+600x700'},
+        {label:'600 × 800mm', price:'266 lei', slug:'Rens+T22+600x800'},{label:'600 × 900mm', price:'292 lei', slug:'Rens+T22+600x900'},
+        {label:'600 × 1000mm', price:'298 lei', slug:'Rens+T22+600x1000'},{label:'600 × 1100mm', price:'344 lei', slug:'Rens+T22+600x1100'},
+        {label:'600 × 1200mm', price:'370 lei', slug:'Rens+T22+600x1200'},{label:'600 × 1300mm', price:'391 lei', slug:'Rens+T22+600x1300'},
+        {label:'600 × 1400mm', price:'424 lei', slug:'Rens+T22+600x1400'},{label:'600 × 1500mm', price:'452 lei', slug:'Rens+T22+600x1500'},
+        {label:'600 × 1600mm', price:'467 lei', slug:'Rens+T22+600x1600'},{label:'600 × 1800mm', price:'544 lei', slug:'Rens+T22+600x1800'},
+        {label:'600 × 2000mm', price:'596 lei', slug:'Rens+T22+600x2000'},
+      ]}
+    };
+    function rensSelectH(h,el){document.querySelectorAll('#otel-h-opts .config-btn').forEach(function(b){b.classList.remove('active')});el.classList.add('active');var opts=document.getElementById('otel-l-opts');opts.innerHTML='';rensData[h].models.forEach(function(m,i){var btn=document.createElement('button');btn.className='config-btn';btn.textContent=m.label;btn.onclick=function(){rensSelectL(h,i,this)};opts.appendChild(btn)});document.getElementById('otel-l-group').style.display='';document.getElementById('otel-price').style.display='none';document.getElementById('otel-cta').href='contact.html?produs=Calorifere+Otel+Rens+T22';}
+    function rensSelectL(h,idx,el){document.querySelectorAll('#otel-l-opts .config-btn').forEach(function(b){b.classList.remove('active')});el.classList.add('active');var m=rensData[h].models[idx];document.getElementById('otel-price-value').textContent=m.price;document.getElementById('otel-price').style.display='flex';document.getElementById('otel-cta').href='contact.html?produs='+m.slug;}
+    // ---- Bimetal ----
+    const bimetalData = {
+      h300:{models:[{label:'Element 300/100',price:'47 lei / element',slug:'Bimetal+300'}]},
+      h500:{models:[
+        {label:'Mirado 500/96 · Alb',price:'49 lei / element',slug:'Bimetal+Mirado+500+Alb'},
+        {label:'Kiran 500/96',price:'48 lei / element',slug:'Bimetal+Kiran+500'},
+        {label:'Mirado 500/96 · Graphite',price:'87 lei / element',slug:'Bimetal+Mirado+500+Graphite'},
+        {label:'Mirado 500/96 · Silver',price:'87 lei / element',slug:'Bimetal+Mirado+500+Silver'},
+        {label:'ASG 500/100 · Alb',price:'111 lei / element',slug:'Bimetal+ASG+500+Alb'},
+        {label:'ASG 500/100 · Graphite',price:'155 lei / element',slug:'Bimetal+ASG+500+Graphite'},
+        {label:'ASG 500/100 · Silver',price:'155 lei / element',slug:'Bimetal+ASG+500+Silver'},
+        {label:'Rens 500/96',price:'La cerere',slug:'Bimetal+Rens+500'},
+      ]}
+    };
+    function bmSelectH(h,el){document.querySelectorAll('#bm-h-opts .config-btn').forEach(function(b){b.classList.remove('active')});el.classList.add('active');var opts=document.getElementById('bm-model-opts');opts.innerHTML='';bimetalData[h].models.forEach(function(m,i){var btn=document.createElement('button');btn.className='config-btn';btn.textContent=m.label;btn.onclick=function(){bmSelectM(h,i,this)};opts.appendChild(btn)});document.getElementById('bm-model-group').style.display='';document.getElementById('bm-price').style.display='none';document.getElementById('bm-cta').href='contact.html?produs=Calorifere+Bimetal';}
+    function bmSelectM(h,idx,el){document.querySelectorAll('#bm-model-opts .config-btn').forEach(function(b){b.classList.remove('active')});el.classList.add('active');var m=bimetalData[h].models[idx];document.getElementById('bm-price-value').textContent=m.price;document.getElementById('bm-price').style.display='flex';document.getElementById('bm-cta').href='contact.html?produs='+m.slug;}
+    // ---- Radiatoare Baie ----
+    const baieData = {
+      w400:{models:[{label:'800mm inaltime',price:'204 lei',slug:'Radiator+Baie+400x800'},{label:'1000mm inaltime',price:'218 lei',slug:'Radiator+Baie+400x1000'},{label:'1500mm inaltime',price:'312 lei',slug:'Radiator+Baie+400x1500'}]},
+      w500:{models:[{label:'800mm inaltime',price:'212 lei',slug:'Radiator+Baie+500x800'},{label:'1000mm inaltime',price:'244 lei',slug:'Radiator+Baie+500x1000'},{label:'1200mm inaltime',price:'282 lei',slug:'Radiator+Baie+500x1200'},{label:'1500mm inaltime',price:'336 lei',slug:'Radiator+Baie+500x1500'},{label:'1800mm inaltime',price:'402 lei',slug:'Radiator+Baie+500x1800'}]},
+      w600:{models:[{label:'800mm inaltime',price:'186 lei',slug:'Radiator+Baie+600x800'},{label:'1000mm inaltime',price:'266 lei',slug:'Radiator+Baie+600x1000'},{label:'1200mm inaltime',price:'316 lei',slug:'Radiator+Baie+600x1200'},{label:'1500mm inaltime',price:'336 lei',slug:'Radiator+Baie+600x1500'},{label:'1800mm inaltime',price:'446 lei',slug:'Radiator+Baie+600x1800'}]}
+    };
+    function baieSelectL(w,el){document.querySelectorAll('#baie-l-opts .config-btn').forEach(function(b){b.classList.remove('active')});el.classList.add('active');var opts=document.getElementById('baie-h-opts');opts.innerHTML='';baieData[w].models.forEach(function(m,i){var btn=document.createElement('button');btn.className='config-btn';btn.textContent=m.label;btn.onclick=function(){baieSelectH(w,i,this)};opts.appendChild(btn)});document.getElementById('baie-h-group').style.display='';document.getElementById('baie-price').style.display='none';document.getElementById('baie-cta').href='contact.html?produs=Radiator+Baie+Scarita';}
+    function baieSelectH(w,idx,el){document.querySelectorAll('#baie-h-opts .config-btn').forEach(function(b){b.classList.remove('active')});el.classList.add('active');var m=baieData[w].models[idx];document.getElementById('baie-price-value').textContent=m.price;document.getElementById('baie-price').style.display='flex';document.getElementById('baie-cta').href='contact.html?produs='+m.slug;}
+    // ---- Configurator Calorifere Aluminiu ----
+    const aluminiuData = {
+      ferroli: {
+        imgSrc: 'Images/Ferroli%20PROTEO%20450.jpeg',
+        imgBrand: 'Ferroli PROTEO', imgSub: 'Aluminiu turnat sub presiune · pana la 16 bar',
+        dimLabel: 'Inaltime element',
+        models: [
+          { label: '~450mm inaltime', detail: 'interax 400mm · lat 80mm', price: '59 lei / element', slug: 'Ferroli+PROTEO+450' },
+          { label: '~600mm inaltime', detail: 'interax 580mm · lat 80mm', price: '53 lei / element', slug: 'Ferroli+PROTEO+HP+600' },
+          { label: '~700mm inaltime', detail: 'interax 680mm · lat 80mm', price: '58 lei / element', slug: 'Ferroli+PROTEO+HP+700' },
+        ]
+      },
+      mirado: {
+        imgSrc: null,
+        imgBrand: 'Mirado', imgSub: 'Element aluminiu · interaxe 300 / 500 / 600mm',
+        dimLabel: 'Inaltime × Latime element',
+        models: [
+          { label: '300 × 85mm', detail: '', price: '53 lei / element', slug: 'Mirado+Aluminiu+300' },
+          { label: '500 × 96mm', detail: '', price: '55 lei / element', slug: 'Mirado+Aluminiu+500' },
+          { label: '600 × 96mm', detail: '', price: '55 lei / element', slug: 'Mirado+Aluminiu+600' },
+        ]
+      },
+      oscar: {
+        imgSrc: 'Images/Oscar%20Tondo%201800%20-%204%20elementi.png',
+        imgBrand: 'Oscar Tondo / Global', imgSub: 'Calorifer decorativ · inaltime 1600–1800mm',
+        dimLabel: 'Model',
+        models: [
+          { label: '1600mm · 3 elementi', detail: 'set complet', price: '975 lei / set', slug: 'Oscar+Tondo+1600+3+elementi', imgSrc: null },
+          { label: '1600mm · 4 elementi', detail: 'set complet', price: '1.296 lei / set', slug: 'Oscar+Tondo+1600+4+elementi', imgSrc: null },
+          { label: '1800mm · 3 elementi', detail: 'set complet', price: '1.053 lei / set', slug: 'Oscar+Tondo+1800+3+elementi', imgSrc: 'Images/Oscar%20Tondo%201800%20-%203%20elementi.jpg' },
+          { label: '1800mm · 4 elementi', detail: 'set complet', price: '1.404 lei / set', slug: 'Oscar+Tondo+1800+4+elementi', imgSrc: 'Images/Oscar%20Tondo%201800%20-%204%20elementi.png' },
+          { label: '1600mm element', detail: 'individual', price: '324 lei / element', slug: 'Oscar+Tondo+element+1600', imgSrc: null },
+          { label: '1800mm element', detail: 'individual', price: '351 lei / element', slug: 'Oscar+Tondo+element+1800', imgSrc: null },
+        ]
+      }
+    };
+
+    function alSelectBrand(brand, el) {
+      document.querySelectorAll('#al-brand-opts .config-btn').forEach(function(b) { b.classList.remove('active'); });
+      el.classList.add('active');
+      var data = aluminiuData[brand];
+      var photo = document.getElementById('al-img-photo');
+      var placeholder = document.getElementById('al-img-placeholder');
+      if (data.imgSrc) {
+        photo.src = data.imgSrc;
+        photo.style.display = '';
+        placeholder.style.display = 'none';
+      } else {
+        photo.style.display = 'none';
+        placeholder.style.display = 'flex';
+        document.getElementById('al-img-brand').textContent = data.imgBrand;
+        document.getElementById('al-img-sub').textContent = data.imgSub;
+      }
+      document.getElementById('al-model-label').textContent = data.dimLabel;
+      var modelOpts = document.getElementById('al-model-opts');
+      modelOpts.innerHTML = '';
+      data.models.forEach(function(m, i) {
+        var btn = document.createElement('button');
+        btn.className = 'config-btn';
+        btn.textContent = m.label;
+        if (m.detail) btn.title = m.detail;
+        btn.onclick = function() { alSelectModel(brand, i, this); };
+        modelOpts.appendChild(btn);
+      });
+      document.getElementById('al-model-group').style.display = '';
+      document.getElementById('al-price').style.display = 'none';
+      document.getElementById('al-cta').href = 'contact.html?produs=Calorifere+Aluminiu';
+    }
+
+    function alSelectModel(brand, idx, el) {
+      document.querySelectorAll('#al-model-opts .config-btn').forEach(function(b) { b.classList.remove('active'); });
+      el.classList.add('active');
+      var m = aluminiuData[brand].models[idx];
+      document.getElementById('al-price-value').textContent = m.price;
+      document.getElementById('al-price').style.display = 'flex';
+      document.getElementById('al-cta').href = 'contact.html?produs=' + m.slug;
+
+      if (m.imgSrc) {
+        var photo = document.getElementById('al-img-photo');
+        photo.src = m.imgSrc;
+        photo.style.display = '';
+        document.getElementById('al-img-placeholder').style.display = 'none';
+      }
+    }
+
+    // Restore filter from URL parameter (e.g. produse.html?cat=pompe)
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var cat = params.get('cat');
+      if (cat && cat !== 'toate') {
+        document.querySelectorAll('.filter-btn').forEach(function(btn) {
+          var oc = btn.getAttribute('onclick') || '';
+          var match = oc.match(/'([^']+)'/);
+          if (match && match[1] === cat) {
+            filterCatalog(cat, btn);
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
