@@ -1059,16 +1059,70 @@ pompe: {
         confBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 200);
 
-      // Log to console (replace with actual API call)
-      console.log('=== GHID FORM SUBMISSION ===');
-      console.log('Ref:', refCode);
-      console.log('Categorie:', document.getElementById('ghid-categorie').value);
-      console.log('Nume:', nume);
-      console.log('Telefon:', telefon);
-      console.log('Email:', email);
-      console.log('Detalii:', document.getElementById('ghid-detalii').value);
+      // Elimina diacritice
+      function removeDiacritics(str) {
+        return String(str)
+          .replace(/[ăĂ]/g, function(c) { return c === 'ă' ? 'a' : 'A'; })
+          .replace(/[âÂ]/g, function(c) { return c === 'â' ? 'a' : 'A'; })
+          .replace(/[îÎ]/g, function(c) { return c === 'î' ? 'i' : 'I'; })
+          .replace(/[șȘşŞ]/g, function(c) { return c === 'S' || c === 'Ș' || c === 'Ş' ? 'S' : 's'; })
+          .replace(/[țȚţŢ]/g, function(c) { return c === 'T' || c === 'Ț' || c === 'Ţ' ? 'T' : 't'; });
+      }
+
+      var KEY_LABELS = {
+        locuinta:    '🏠 Locuinta',
+        suprafata:   '📐 Suprafata',
+        structura:   '🏗️ Structura',
+        gaz:         '🔥 Gaz',
+        izolatie:    '🧱 Izolatie',
+        apa_calda:   '💧 Apa calda',
+        combustibil: '🪵 Combustibil',
+        alimentare:  '⚙️ Alimentare',
+        scop:        '🎯 Scop',
+        camere:      '🚪 Camere',
+        cladire:     '🏢 Cladire',
+        experienta:  '✅ Experienta AC',
+        constructie: '🔨 Constructie',
+        sursa:       '⚡ Sursa caldura',
+        spatiu_ext:  '🌿 Spatiu exterior'
+      };
+
+      // Formateaza raspunsurile wizard ca text lizibil
+      var wizardLines = [];
       completedCategories.forEach(function(catId) {
-        console.log('Wizard ' + catId + ':', JSON.stringify(wizardState[catId].answers));
+        var cat = CATEGORIES[catId];
+        wizardLines.push('── ' + cat.icon + ' ' + removeDiacritics(cat.name) + ' ──');
+        var answers = wizardState[catId].answers;
+        Object.keys(answers).forEach(function(key) {
+          var label = KEY_LABELS[key] || key;
+          var value = removeDiacritics(answers[key]);
+          wizardLines.push(label + ': ' + value);
+        });
+      });
+
+      var payload = {
+        _subject: '[TermoShop] Ghid interactiv ' + refCode,
+        cod_lead: refCode,
+        sursa: 'Ghid interactiv',
+        categorie: removeDiacritics(document.getElementById('ghid-categorie').value),
+        nume: nume,
+        telefon: telefon,
+        email: email || '—',
+        detalii: removeDiacritics(document.getElementById('ghid-detalii').value) || '—',
+        raspunsuri_wizard: wizardLines.join('\n')
+      };
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) { submitBtn.disabled = true; }
+
+      fetch('https://formspree.io/f/meevgbzl', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .catch(function() {
+        // Trimitem in background — nu blocam UI-ul daca e eroare
+        if (submitBtn) { submitBtn.disabled = false; }
       });
     });
 

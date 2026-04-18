@@ -308,9 +308,13 @@
       });
     });
 
-    // Form submission — genereaza cod unic si arata confirmare
+    // Form submission — genereaza cod unic si trimite la Formspree
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
+
+      var btn = this.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Se trimite...';
 
       // Genereaza cod unic TS-YYYY-MMDD-XXXX
       var now = new Date();
@@ -320,17 +324,45 @@
       var rand = String(Math.floor(1000 + Math.random() * 9000));
       var code = 'TS-' + year + '-' + month + day + '-' + rand;
 
-      // Arata confirmarea
-      document.getElementById('contact-form').style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-      document.getElementById('lead-code').textContent = code;
+      // Colecteaza datele din form
+      var produse = Array.from(document.querySelectorAll('input[name="produs"]:checked'))
+                        .map(function(el) { return el.value; }).join(', ');
 
-      // Viitor: aici se va trimite datele catre webhook N8N
-      // fetch('https://n8n.example.com/webhook/termoshop', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ code: code, ...formData })
-      // });
+      var payload = {
+        _subject: '[TermoShop] Cerere noua ' + code,
+        cod_lead: code,
+        nume: document.getElementById('nume').value,
+        telefon: document.getElementById('telefon').value,
+        email: document.getElementById('email').value || '—',
+        produse_dorite: produse || '—',
+        suprafata: document.getElementById('suprafata').value || '—',
+        camere: document.getElementById('camere').value || '—',
+        izolatie: document.getElementById('izolatie').value || '—',
+        montaj: document.getElementById('montaj').value || '—',
+        detalii: document.getElementById('detalii').value || '—'
+      };
+
+      fetch('https://formspree.io/f/meevgbzl', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(resp) {
+        if (resp.ok) {
+          document.getElementById('contact-form').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+          document.getElementById('lead-code').textContent = code;
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Trimite cererea';
+          alert('A aparut o eroare. Te rugam sa ne contactezi direct la 0775 175 897.');
+        }
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Trimite cererea';
+        alert('A aparut o eroare de retea. Verifica conexiunea si incearca din nou.');
+      });
     });
   </script>
 
