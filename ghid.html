@@ -1139,6 +1139,26 @@ pompe: {
       window.openCategory(catId);
     };
 
+    // ===== DEEP LINK din quiz teaser (homepage) =====
+    // Suporta ?cat=<id>&locuinta=<Apartament|Casa|Vila>
+    (function applyUrlParams() {
+      if (!window.URLSearchParams) return;
+      var params = new URLSearchParams(window.location.search);
+      var cat = params.get('cat');
+      var locuinta = params.get('locuinta');
+      if (!cat || !CATEGORIES[cat]) return;
+
+      // Daca prima intrebare a categoriei e "Tip locuinta" si avem valoare, pre-populam
+      var firstLabel = CATEGORIES[cat].questionLabels[0];
+      if (locuinta && firstLabel === 'Tip locuinta' && ['Apartament', 'Casa', 'Vila'].indexOf(locuinta) >= 0) {
+        wizardState[cat].answers.locuinta = locuinta;
+        wizardState[cat].currentStep = 1;
+      }
+
+      // Deschide categoria — restoreWizardState reaplica selectia vizual
+      window.openCategory(cat);
+    })();
+
   })();
   </script>
 

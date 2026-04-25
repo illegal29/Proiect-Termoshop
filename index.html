@@ -26,14 +26,85 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- Hero cu calculator -->
+  <section class="hero hero-calc">
     <div class="hero-content">
       <h1>Experți în <span>încălzire și climatizare</span> lângă tine</h1>
-      <p>Consultanță gratuită și intermediere pentru centrale termice — te ghidăm de la alegere până la montaj.</p>
-      <div class="hero-buttons">
-        <a href="contact.html" class="btn-primary">Vreau consultanță gratuită</a>
-        <a href="#cum-lucram" class="btn-secondary">Cum funcționează?</a>
+      <p>Consultanță gratuită și intermediere — de la alegere până la montaj.</p>
+
+      <div class="calc-card">
+        <h3 class="calc-title">Cât te costă lunar încălzirea casei tale?</h3>
+        <p class="calc-subtitle">Compară 4 surse de încălzire în 5 secunde.</p>
+
+        <div class="calc-inputs">
+          <div class="calc-input-group">
+            <label for="calc-suprafata">Suprafață locuință</label>
+            <div class="calc-input-wrapper">
+              <input type="number" id="calc-suprafata" min="20" max="1000" value="100" inputmode="numeric">
+              <span class="calc-input-unit">m²</span>
+            </div>
+          </div>
+          <div class="calc-input-group">
+            <label for="calc-izolatie">Izolație</label>
+            <select id="calc-izolatie">
+              <option value="slaba">Slabă (fără termosistem)</option>
+              <option value="medie" selected>Medie</option>
+              <option value="buna">Bună (termosistem)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-result" id="calc-result"></div>
+
+        <div class="calc-cta">
+          <a href="contact.html" class="btn-primary" id="calc-cta-oferta">Vreau ofertă personalizată</a>
+          <a href="produse.html" class="btn-secondary" id="calc-cta-catalog">Vezi catalog</a>
+        </div>
+
+        <p class="calc-note">* Estimare orientativă pentru sezon de încălzire (oct–mar). Costul real depinde de utilizare, tarife locale și calitatea combustibilului.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz teaser -->
+  <section class="quiz-teaser">
+    <div class="container">
+      <h2 class="section-title">Nu știi ce îți trebuie? Te ghidăm în 30 de secunde</h2>
+      <p class="section-subtitle">Răspunde la 2 întrebări și îți arătăm ce ți se potrivește.</p>
+
+      <div class="quiz-card">
+        <div class="quiz-progress">
+          <span class="quiz-dot active"></span>
+          <span class="quiz-dot"></span>
+        </div>
+
+        <div class="quiz-step active" data-step="0">
+          <div class="quiz-question">1. Ce te interesează?</div>
+          <div class="quiz-options" data-key="cat">
+            <button type="button" class="quiz-option" data-value="centrale"><span class="quiz-option-icon">🔥</span>Centrale termice</button>
+            <button type="button" class="quiz-option" data-value="cazane"><span class="quiz-option-icon">🪵</span>Cazane &amp; Sobe</button>
+            <button type="button" class="quiz-option" data-value="climatizare"><span class="quiz-option-icon">❄️</span>Climatizare</button>
+            <button type="button" class="quiz-option" data-value="pardoseala"><span class="quiz-option-icon">🌡️</span>Pardoseală</button>
+            <button type="button" class="quiz-option" data-value="pompe"><span class="quiz-option-icon">♨️</span>Pompe căldură</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="1">
+          <div class="quiz-question">2. Ce tip de locuință ai?</div>
+          <div class="quiz-options" data-key="locuinta">
+            <button type="button" class="quiz-option" data-value="Apartament"><span class="quiz-option-icon">🏢</span>Apartament</button>
+            <button type="button" class="quiz-option" data-value="Casa"><span class="quiz-option-icon">🏠</span>Casă</button>
+            <button type="button" class="quiz-option" data-value="Vila"><span class="quiz-option-icon">🏡</span>Vilă</button>
+          </div>
+          <button type="button" class="quiz-back">← Înapoi</button>
+        </div>
+
+        <div class="quiz-step" data-step="result">
+          <div class="quiz-result-icon">✨</div>
+          <p class="quiz-result-text">Perfect! Hai să-ți arătăm soluția potrivită pentru tine.</p>
+          <a href="ghid.html" class="btn-primary" id="quiz-continue">Continuă spre recomandare →</a>
+          <button type="button" class="quiz-back">← Reia testul</button>
+        </div>
       </div>
     </div>
   </section>
@@ -98,43 +169,48 @@
     </div>
   </section>
 
-  <!-- Social Proof — Branduri -->
-  <section class="social-proof">
-    <div class="container">
-      <h2 class="section-title">Branduri de încredere</h2>
-      <p class="section-subtitle">Lucrăm cu producători verificați pentru a-ți oferi calitate garantată.</p>
-      <div class="brands-grid">
-        <span class="brand-item">Warmline</span>
-        <span class="brand-item">Tis</span>
-        <span class="brand-item">Neus</span>
-        <span class="brand-item">Almax</span>
-        <span class="brand-item">Kronas</span>
-      </div>
-    </div>
-  </section>
-
   <!-- Urmărește-ne -->
   <section class="social-media">
     <div class="container">
       <h2 class="section-title">Vezi cum lucrăm</h2>
       <p class="section-subtitle">Urmărește-ne pe rețelele sociale pentru sfaturi, prezentări de produse și noutăți.</p>
 
-      <div style="display:flex; justify-content:center; margin: 32px 0 24px;">
-        <div style="position:relative; border-radius:14px; overflow:hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.12); max-width:314px; width:100%;">
-          <!-- Overlay numar telefon -->
-          <div style="position:absolute; bottom:78px; left:0; right:0; z-index:10; background:rgba(232,115,42,0.98); padding:14px 16px; text-align:center;">
-            <span style="color:white; font-weight:700; font-size:1.25rem; letter-spacing:0.04em;">0775 175 897</span>
+      <div class="reels-carousel" id="reels-carousel">
+        <button class="reels-arrow reels-arrow-left" type="button" aria-label="Videoclip anterior">‹</button>
+
+        <div class="reels-stage">
+          <div class="reel-slide pos-center" data-idx="0">
+            <div class="reel-overlay"><span>0775 175 897</span></div>
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F4227054024202116&show_text=false&width=314"
+              width="314" height="560" scrolling="no" frameborder="0" allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              loading="lazy"></iframe>
           </div>
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F4227054024202116&show_text=false&width=314"
-            width="314"
-            height="560"
-            style="border:none; overflow:hidden; display:block; width:100%;"
-            scrolling="no"
-            frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-          </iframe>
+          <div class="reel-slide pos-right" data-idx="1">
+            <div class="reel-overlay"><span>0775 175 897</span></div>
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1194774799260913&show_text=false&width=314"
+              width="314" height="560" scrolling="no" frameborder="0" allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              loading="lazy"></iframe>
+          </div>
+          <div class="reel-slide pos-left" data-idx="2">
+            <div class="reel-overlay"><span>0775 175 897</span></div>
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2406229736535735&show_text=false&width=314"
+              width="314" height="560" scrolling="no" frameborder="0" allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <button class="reels-arrow reels-arrow-right" type="button" aria-label="Videoclip urmator">›</button>
+
+        <div class="reels-dots">
+          <button type="button" class="reels-dot active" data-target="0" aria-label="Videoclip 1"></button>
+          <button type="button" class="reels-dot" data-target="1" aria-label="Videoclip 2"></button>
+          <button type="button" class="reels-dot" data-target="2" aria-label="Videoclip 3"></button>
         </div>
       </div>
 
@@ -142,6 +218,72 @@
         <a href="https://www.facebook.com/reel/4227054024202116" class="social-link" target="_blank" rel="noopener">📘 Facebook</a>
         <a href="#" class="social-link" target="_blank" rel="noopener">🎵 TikTok</a>
         <a href="#" class="social-link" target="_blank" rel="noopener">📸 Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">Întrebări frecvente</h2>
+      <p class="section-subtitle">Răspunsuri rapide la cele mai comune întrebări înainte de a ne contacta.</p>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">Costă consultanța sau oferta?</button>
+          <div class="faq-answer">
+            <p>Nu, totul e 100% gratuit și fără obligații. Discutăm despre nevoile tale, îți recomandăm soluția potrivită și primești o ofertă detaliată. Tu decizi dacă mergi mai departe — fără presiune, fără costuri ascunse.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Sunteți producător sau intermediar?</button>
+          <div class="faq-answer">
+            <p>Suntem partener oficial TermoShop (Termojet Invest SRL) — un intermediar specializat care îți oferă consultanță și acces la întreg catalogul lor de produse, la aceleași prețuri ca și cumpărarea directă. Avantajul tău: ghidare personalizată gratuită, fără să te pierzi printre mii de produse.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">În ce zone livrați?</button>
+          <div class="faq-answer">
+            <p>Livrăm în toată România prin partenerii noștri logistici. Termenul mediu este 3–7 zile lucrătoare, în funcție de stocul produsului și de zona de livrare. Pentru produse pe stoc, livrarea poate fi și mai rapidă.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Cât durează până primesc o ofertă?</button>
+          <div class="faq-answer">
+            <p>Te contactăm în maxim 2 ore în timpul programului (luni–vineri 9:00–18:00, sâmbătă 10:00–14:00). Oferta detaliată ajunge la tine în aceeași zi sau cel târziu a doua zi, în funcție de complexitatea cererii.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Cine se ocupă de montaj?</button>
+          <div class="faq-answer">
+            <p>Avem o rețea de instalatori autorizați și verificați în toată țara. Te punem în legătură cu un instalator din zona ta, iar prețul montajului ți-l comunicăm transparent înainte de a te decide. Dacă preferi propriul instalator, livrăm doar echipamentul.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Ce garanție au produsele?</button>
+          <div class="faq-answer">
+            <p>Toate produsele beneficiază de garanție oficială de la producător — minim 24 de luni pentru cazane și pompe de căldură, minim 36 de luni pentru aer condiționat (în funcție de marcă și model). Pentru montajul realizat prin partenerii noștri, oferim suplimentar garanție pe lucrare.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Pot plăti în rate?</button>
+          <div class="faq-answer">
+            <p>Da. Oferim plată în rate prin partenerii financiari ai TermoShop (până la 12 rate fără dobândă pentru produsele eligibile, în funcție de bancă). Detaliile exacte le primești în oferta personalizată.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Pot vedea produsul fizic înainte să cumpăr?</button>
+          <div class="faq-answer">
+            <p>Da, multe modele sunt expuse în showroom-ul TermoShop din Iași (Calea Chișinăului 29). Te putem programa pentru o vizită și te însoțim acolo dacă dorești. Pentru produsele care nu sunt expuse, primești fișa tehnică completă, poze și răspunsuri la orice întrebare tehnică.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -186,6 +328,246 @@
       &copy; 2026 CrisTermo. Toate drepturile rezervate.
     </div>
   </footer>
+
+  <!-- Sticky CTA mobil (apare doar pe mobile via CSS) -->
+  <div class="sticky-cta-mobile" aria-label="Contact rapid">
+    <a href="tel:+40775175897" class="sticky-cta-btn sticky-cta-call">
+      <span class="sticky-cta-icon" aria-hidden="true">📞</span>
+      <span class="sticky-cta-label"><strong>Sună</strong><small>0775 175 897</small></span>
+    </a>
+    <a href="https://wa.me/40775175897" class="sticky-cta-btn sticky-cta-whatsapp" target="_blank" rel="noopener">
+      <span class="sticky-cta-icon" aria-hidden="true">💬</span>
+      <span class="sticky-cta-label"><strong>WhatsApp</strong><small>Chat instant</small></span>
+    </a>
+  </div>
+
+  <!-- Calculator + Quiz JavaScript -->
+  <script>
+  (function() {
+    'use strict';
+
+    // ===== CALCULATOR COST LUNAR =====
+    var FACTOR_IZOLATIE = { slaba: 1.4, medie: 1.0, buna: 0.7 };
+
+    var SOURCES = [
+      { id: 'lemne',  label: 'Lemne',                pretKWh: 0.24,  eficienta: 0.85, kwDiv: 10, badge: 'Cel mai ieftin',     cat: 'lemne' },
+      { id: 'peleti', label: 'Peleți',               pretKWh: 0.39,  eficienta: 0.92, kwDiv: 10, badge: 'Automat',            cat: 'peleti' },
+      { id: 'mixt',   label: 'Mixt (lemne+peleți)',  pretKWh: 0.315, eficienta: 0.88, kwDiv: 10, badge: 'Flexibil',           cat: 'lemne' },
+      { id: 'pompa',  label: 'Pompă căldură',        pretKWh: 1.30,  eficienta: 3.5,  kwDiv: 14, badge: 'Verde + eficient',   cat: 'pompe' }
+    ];
+
+    var inputSup    = document.getElementById('calc-suprafata');
+    var inputIzo    = document.getElementById('calc-izolatie');
+    var resultEl    = document.getElementById('calc-result');
+    var ctaOferta   = document.getElementById('calc-cta-oferta');
+    var ctaCatalog  = document.getElementById('calc-cta-catalog');
+
+    function calcKW(suprafata, kwDiv) {
+      return Math.max(8, Math.round(suprafata / kwDiv));
+    }
+
+    function formatLei(n) {
+      return Math.round(n / 10) * 10;
+    }
+
+    function recalc() {
+      if (!inputSup || !resultEl) return;
+      var sup = parseInt(inputSup.value, 10);
+      var izoKey = inputIzo.value;
+      var factor = FACTOR_IZOLATIE[izoKey] || 1.0;
+
+      if (!sup || sup < 20 || sup > 1000) {
+        resultEl.innerHTML = '<p class="calc-empty">Introdu o suprafață între 20 și 1000 m² pentru a vedea estimarea.</p>';
+        return;
+      }
+
+      var necesarKWhAn = sup * 100 * factor;
+      var lunaKWh = necesarKWhAn / 6;
+
+      var html = '';
+      var minCost = Infinity;
+      var minSrc = null;
+
+      SOURCES.forEach(function(src) {
+        var costLuna = (lunaKWh * src.pretKWh) / src.eficienta;
+        var costRotunjit = formatLei(costLuna);
+        var kw = calcKW(sup, src.kwDiv);
+        if (costLuna < minCost) { minCost = costLuna; minSrc = src; }
+
+        html += '<div class="calc-row" data-src="' + src.id + '">';
+        html +=   '<span class="calc-src">' + src.label + '</span>';
+        html +=   '<span class="calc-cost">~' + costRotunjit.toLocaleString('ro-RO') + ' lei/lună</span>';
+        html +=   '<span class="calc-kw">' + kw + ' kW</span>';
+        html +=   '<span class="calc-badge">' + src.badge + '</span>';
+        html += '</div>';
+      });
+
+      resultEl.innerHTML = html;
+
+      // Update CTAs to carry context
+      var izoLabel = inputIzo.options[inputIzo.selectedIndex].text;
+      var qs = '?suprafata=' + encodeURIComponent(sup) +
+               '&izolatie=' + encodeURIComponent(izoLabel) +
+               (minSrc ? '&sursa=' + encodeURIComponent(minSrc.label) : '');
+      ctaOferta.href = 'contact.html' + qs;
+      ctaCatalog.href = 'produse.html' + (minSrc ? '?cat=' + minSrc.cat : '');
+    }
+
+    if (inputSup && inputIzo) {
+      inputSup.addEventListener('input', recalc);
+      inputIzo.addEventListener('change', recalc);
+      recalc();
+    }
+
+    // ===== QUIZ TEASER =====
+    var quizState = { cat: null, locuinta: null, currentStep: 0 };
+    var quizSteps = document.querySelectorAll('.quiz-step');
+    var quizDots = document.querySelectorAll('.quiz-dot');
+    var quizContinue = document.getElementById('quiz-continue');
+
+    function showQuizStep(step) {
+      quizSteps.forEach(function(s) {
+        s.classList.toggle('active', String(s.getAttribute('data-step')) === String(step));
+      });
+      quizDots.forEach(function(d, i) {
+        var on = (step === 'result') || (i <= step);
+        d.classList.toggle('active', on);
+      });
+    }
+
+    document.querySelectorAll('.quiz-option').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var key = this.parentElement.getAttribute('data-key');
+        var value = this.getAttribute('data-value');
+        quizState[key] = value;
+
+        var siblings = this.parentElement.querySelectorAll('.quiz-option');
+        siblings.forEach(function(s) { s.classList.remove('selected'); });
+        this.classList.add('selected');
+
+        setTimeout(function() {
+          if (quizState.currentStep === 0) {
+            quizState.currentStep = 1;
+            showQuizStep(1);
+          } else if (quizState.currentStep === 1) {
+            quizState.currentStep = 'result';
+            showQuizStep('result');
+            if (quizContinue) {
+              quizContinue.href = 'ghid.html?cat=' + encodeURIComponent(quizState.cat) +
+                                  '&locuinta=' + encodeURIComponent(quizState.locuinta);
+            }
+          }
+        }, 240);
+      });
+    });
+
+    document.querySelectorAll('.quiz-back').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (quizState.currentStep === 1) {
+          quizState.currentStep = 0;
+          showQuizStep(0);
+        } else if (quizState.currentStep === 'result') {
+          quizState.currentStep = 0;
+          quizState.cat = null;
+          quizState.locuinta = null;
+          document.querySelectorAll('.quiz-option').forEach(function(o) { o.classList.remove('selected'); });
+          showQuizStep(0);
+        }
+      });
+    });
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        document.querySelectorAll('.faq-item').forEach(function(other) {
+          if (other !== item) other.classList.remove('open');
+        });
+        item.classList.toggle('open');
+      });
+    });
+
+    // ===== CARUSEL VIDEO =====
+    var carousel = document.getElementById('reels-carousel');
+    if (carousel) {
+      var slides = carousel.querySelectorAll('.reel-slide');
+      var dots = carousel.querySelectorAll('.reels-dot');
+      var arrowLeft = carousel.querySelector('.reels-arrow-left');
+      var arrowRight = carousel.querySelector('.reels-arrow-right');
+      var n = slides.length;
+      var current = 0;
+
+      function applyPositions() {
+        slides.forEach(function(slide, i) {
+          var rel = (i - current + n) % n;
+          slide.classList.remove('pos-left', 'pos-center', 'pos-right');
+          if (rel === 0) slide.classList.add('pos-center');
+          else if (rel === 1) slide.classList.add('pos-right');
+          else slide.classList.add('pos-left');
+        });
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      // Opreste video-ul de pe slide-ul cu index-ul dat (reload iframe)
+      function stopSlideVideo(idx) {
+        var iframe = slides[idx].querySelector('iframe');
+        if (!iframe) return;
+        var src = iframe.getAttribute('src');
+        if (src) iframe.setAttribute('src', src);
+      }
+
+      function go(delta) {
+        if (delta === 0) return;
+        var prev = current;
+        current = (current + delta + n) % n;
+        if (prev !== current) stopSlideVideo(prev);
+        applyPositions();
+      }
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= n || idx === current) return;
+        var prev = current;
+        current = idx;
+        stopSlideVideo(prev);
+        applyPositions();
+      }
+
+      if (arrowLeft) arrowLeft.addEventListener('click', function() { go(-1); });
+      if (arrowRight) arrowRight.addEventListener('click', function() { go(1); });
+
+      dots.forEach(function(d) {
+        d.addEventListener('click', function() {
+          goTo(parseInt(this.getAttribute('data-target'), 10));
+        });
+      });
+
+      // Click pe slide lateral → adu-l in centru
+      slides.forEach(function(slide) {
+        slide.addEventListener('click', function(ev) {
+          if (this.classList.contains('pos-center')) return;
+          // Daca click vine din interiorul iframe-ului (Facebook), il lasam in pace
+          if (ev.target.tagName === 'IFRAME') return;
+          var idx = parseInt(this.getAttribute('data-idx'), 10);
+          goTo(idx);
+        });
+      });
+
+      // Tastatura: sageti stanga/dreapta cand caruselul e in viewport
+      document.addEventListener('keydown', function(ev) {
+        var rect = carousel.getBoundingClientRect();
+        var inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (!inView) return;
+        if (ev.key === 'ArrowLeft') go(-1);
+        else if (ev.key === 'ArrowRight') go(1);
+      });
+
+      applyPositions();
+    }
+
+  })();
+  </script>
 
 </body>
 </html>

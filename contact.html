@@ -286,6 +286,45 @@
 
   <!-- Contact Form JavaScript -->
   <script>
+    // Pre-populare din URL params (de pe calculatorul homepage / paginile produs)
+    (function prefillFromUrl() {
+      if (!window.URLSearchParams) return;
+      var params = new URLSearchParams(window.location.search);
+
+      // suprafata
+      var sup = params.get('suprafata');
+      if (sup && /^\d+$/.test(sup)) {
+        document.getElementById('suprafata').value = sup;
+      }
+
+      // izolatie (mapare label -> value)
+      var izoLabel = (params.get('izolatie') || '').toLowerCase();
+      var izoMap = '';
+      if (izoLabel.indexOf('bun') === 0) izoMap = 'buna';
+      else if (izoLabel.indexOf('medie') === 0) izoMap = 'medie';
+      else if (izoLabel.indexOf('slab') === 0 || izoLabel.indexOf('far') >= 0) izoMap = 'fara';
+      if (izoMap) document.getElementById('izolatie').value = izoMap;
+
+      // sursa (Lemne/Peleti/Mixt -> cazane-sobe; Pompa caldura -> pompe-caldura)
+      var sursa = (params.get('sursa') || '').toLowerCase();
+      var produsValue = '';
+      if (sursa.indexOf('pomp') === 0) produsValue = 'pompe-caldura';
+      else if (sursa.indexOf('lemn') === 0 || sursa.indexOf('pelet') === 0 || sursa.indexOf('mixt') === 0) produsValue = 'cazane-sobe';
+      if (produsValue) {
+        var cb = document.querySelector('input[name="produs"][value="' + produsValue + '"]');
+        if (cb) cb.checked = true;
+      }
+
+      // produs (parametru existent — la fel ca inainte)
+      var produsParam = params.get('produs');
+      if (produsParam) {
+        var detalii = document.getElementById('detalii');
+        if (detalii && !detalii.value) {
+          detalii.value = 'Sunt interesat de: ' + produsParam;
+        }
+      }
+    })();
+
     // Validare Nume - doar litere si spatii (inclusiv diacritice)
     document.getElementById('nume').addEventListener('input', function() {
       this.value = this.value.replace(/[^a-zA-ZăâîșțĂÂÎȘȚ\s]/g, '');

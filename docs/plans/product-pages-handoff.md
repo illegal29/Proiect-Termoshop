@@ -276,6 +276,66 @@ Pagina curenta `sunsystem-boilere.html` are DOAR Sunsystem MB-L (3 modele). Treb
 
 ---
 
+---
+
+## Sesiunea 2026-04-25 — Homepage redesign sesiunea 1 (COMPLET)
+
+### Ce s-a facut
+- [x] **Hero rescris cu Calculator cost lunar** in `index.html`:
+  - 2 inputuri: Suprafata (m²) + Izolatie (slaba/medie/buna)
+  - Live update — rezultat se recalculeaza la fiecare modificare
+  - 4 randuri output: Lemne / Peleti / Mixt / Pompa caldura, fiecare cu cost lunar + putere kW + badge
+  - 2 CTA: "Vreau oferta personalizata" (→ contact.html cu params) + "Vezi catalog" (→ produse.html?cat=<sursa_ieftina>)
+  - Formule: necesar = suprafata × 100 × factor_izolatie {slaba:1.4, medie:1.0, buna:0.7}; cost_lunar = (necesar/6) × pret_kWh / eficienta. Sezon de incalzire 6 luni.
+- [x] **Sectiune Quiz teaser** sub hero in `index.html`:
+  - 2 intrebari: Categorie (5 optiuni) + Locuinta (Apartament/Casa/Vila)
+  - Buton "Continua spre recomandare" → redirect `ghid.html?cat=<id>&locuinta=<value>`
+- [x] **Sticky CTA mobil** in `index.html` (doar @media max-width:768px):
+  - 2 butoane jumate-jumate: Suna (portocaliu brand) + WhatsApp (verde WA)
+  - `body { padding-bottom: 64px }` pe mobil pentru a nu acoperi footerul
+- [x] **`styles.css`**: adaugate ~430 linii noi (calculator, quiz, sticky bar + responsive)
+- [x] **`ghid.html`**: parser URL params — daca prezent `?cat=` deschide categoria; daca prezent si `?locuinta=` si categoria are "Tip locuinta" ca step 0 (centrale/cazane), pre-populeaza si avanseaza la step 1
+- [x] **`contact.html`**: parser URL params — pre-populeaza Suprafata, Izolatie (mapare label→value), si bifeaza checkbox-ul Produs corespunzator sursei (Lemne/Peleti/Mixt → cazane-sobe; Pompa caldura → pompe-caldura)
+
+### Document design salvat
+`docs/plans/2026-04-25-homepage-redesign-design.md` — contine UX, formule complete, edge cases.
+
+### Sesiunea 2 — Homepage (URMATOAREA)
+**STATUS:** PARTIAL COMPLET (FAQ + video) — cleanup vizual amanat
+
+1. ~~**FAQ accordion** pe homepage~~ — **COMPLET (2026-04-25 sesiunea 2)**
+   - 8 intrebari adaugate inainte de CTA Final: consultanta gratuita, intermediar/producator, livrare, timp oferta, montaj, garantie, plata in rate, vizionare fizica showroom Iasi
+   - Refoloseste stilul `.faq-item`/`.faq-question`/`.faq-answer` din contact.html (deja in styles.css)
+   - Bumped `.faq-item.open .faq-answer { max-height: 200px → 600px }` pentru raspunsuri mai lungi
+2. **Cleanup vizual sectiuni "De ce CrisTermo?" si "Branduri"** — **AMANAT pentru sesiunea urmatoare**
+   - Ovidiu a mentionat ca arata fad/fara impact
+   - Idei: schimbat icoanele cu SVG-uri proprii sau imagini, branduri cu logo-uri reale (nu doar text), eventual hover effects mai puternice, eventual sectiune unica "De ce noi" cu numere/statistici (X clienti, Y ani experienta TermoShop, Z branduri exclusive)
+3. ~~**Sectiune video carusel**~~ — **COMPLET (2026-04-25 sesiunea 2 — revizuit)**
+   - Implementat ca **carusel rotativ cu 3 Reels**: 1 mare in centru + 2 mici lateral + sageti stanga/dreapta + dots indicator
+   - Reel-uri: `4227054024202116` + `1194774799260913` + `2406229736535735`
+   - Pozitionare absoluta cu CSS transform (scale 0.7 pe lateralele); tranzitie 0.5s
+   - Navigare: sageti, click pe slide lateral (il aduce in centru), dots, tastatura ←/→ (cand e in viewport)
+   - **Stop video automat la navigare**: `stopSlideVideo()` reseteaza `iframe.src` pe slide-ul vechi → reload iframe → video-ul se opreste. Previne situatia in care 2-3 video-uri ruleaza simultan.
+   - Iframe-urile au `loading="lazy"`; raman montate intre rotiri (doar slide-ul vechi se reincarca la nav)
+   - Overlay portocaliu cu numarul de telefon pe toate 3
+   - Mobil (≤900px): doar slide-ul central vizibil, lateralele ascunse cu opacity 0; sagetile + dots raman functionale
+   - Selectoare CSS: `.reels-carousel`, `.reels-stage`, `.reel-slide.pos-{center,left,right}`, `.reels-arrow`, `.reels-dots`
+
+4. ~~**Eliminat sectiunea "Branduri de incredere"**~~ — **COMPLET (2026-04-25 sesiunea 2)**
+   - Brandurile sunt deja mentionate in cardul "Produse exclusive" din "De ce sa alegi CrisTermo?" — sectiunea era duplicata
+   - Sters HTML-ul `.social-proof` din index.html + CSS-ul aferent (`.social-proof`, `.brands-grid`, `.brand-item`) din styles.css
+
+### Sesiunea 3 — Cand exista trafic real (>20-30 leaduri)
+1. **Banda live cu lead-uri** (anonimizate: "Mihai din Iasi a cerut oferta acum 12 minute")
+2. **Harta interventii** SVG cu pin-uri pe orase + contor "X clienti / Y orase"
+
+### Note importante pentru sesiunea 2
+- Index-ul actual mai contine sectiunea "De ce CrisTermo?" (cards cu emoji-uri 💬💰🔧⭐) si "Branduri de incredere" (badge-uri text). Astea sunt sectiunile pe care Ovidiu vrea sa le punem la zi vizual.
+- Pe mobil, body are padding-bottom 64px — daca adaugi sectiuni noi nu uita.
+- Styles.css are deja stilurile necesare pentru `.faq-item`, `.faq-question` (folosite in contact.html si ghid.html) — pot fi refolosite.
+
+---
+
 ## Dupa fiecare sesiune
 
 **IMPORTANT:** La finalul fiecarei sesiuni, bifeaza ce ai completat:
