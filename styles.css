@@ -1709,11 +1709,87 @@ section {
 }
 
 .calc-input-group label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.85rem;
   font-weight: 600;
   color: #2D3436;
   margin-bottom: 6px;
+}
+
+/* Buton info (i) langa label */
+.calc-info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #E8732A;
+  color: #FFFFFF;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.calc-info-btn:hover {
+  background-color: #D4611F;
+  transform: scale(1.12);
+}
+
+.calc-info-btn.is-active {
+  background-color: #2D3436;
+  transform: rotate(180deg);
+}
+
+/* Panel cu exemple izolatie */
+.calc-info-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, margin 0.35s ease;
+  background-color: #FFF8F0;
+  border-radius: 10px;
+  border: 1px solid #F0E0CC;
+  margin: 0 0 0;
+}
+
+.calc-info-panel.open,
+.calc-info-panel.hover {
+  max-height: 500px;
+  margin: -8px 0 18px;
+}
+
+.calc-info-panel-content {
+  padding: 14px 16px;
+}
+
+.calc-info-panel p {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #2D3436;
+  margin-bottom: 10px;
+}
+
+.calc-info-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.calc-info-panel strong {
+  color: #2D3436;
+  font-weight: 600;
+}
+
+.calc-info-panel em {
+  color: #A0672A;
+  font-style: italic;
+  font-size: 0.8rem;
 }
 
 .calc-input-wrapper {

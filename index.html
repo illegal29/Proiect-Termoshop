@@ -45,12 +45,23 @@
             </div>
           </div>
           <div class="calc-input-group">
-            <label for="calc-izolatie">Izolație</label>
+            <label for="calc-izolatie">
+              Izolație
+              <button type="button" class="calc-info-btn" id="calc-izolatie-info-btn" aria-expanded="false" aria-controls="calc-izolatie-info" aria-label="Vezi exemple izolație">i</button>
+            </label>
             <select id="calc-izolatie">
               <option value="slaba">Slabă (fără termosistem)</option>
               <option value="medie" selected>Medie</option>
               <option value="buna">Bună (termosistem)</option>
             </select>
+          </div>
+        </div>
+
+        <div class="calc-info-panel" id="calc-izolatie-info" role="region" aria-labelledby="calc-izolatie-info-btn">
+          <div class="calc-info-panel-content">
+            <p><strong>🟠 Slabă</strong> — casă veche fără termosistem pe exterior, ferestre vechi (lemn sau termopane vechi de 10+ ani), pod / tavan neizolat. Pereți din BCA sau cărămidă fără polistiren. <em>Pierderi mari de căldură.</em></p>
+            <p><strong>🟡 Medie</strong> — pereți tencuiți dar fără polistiren pe exterior, termopane moderne (5–10 ani), izolație minimă la pod. Tipic pentru blocuri și case dinainte de 2010. <em>Echilibru consum / confort.</em></p>
+            <p><strong>🟢 Bună</strong> — termosistem de polistiren ≥10 cm pe exterior, ferestre noi (eventual triple-glazing), pod izolat 10+ cm. Case noi sau renovate complet după 2015. <em>Consum redus, confort maxim.</em></p>
           </div>
         </div>
 
@@ -417,6 +428,27 @@
       inputSup.addEventListener('input', recalc);
       inputIzo.addEventListener('change', recalc);
       recalc();
+    }
+
+    // ===== Panel info izolatie: hover (temporar) + click (sticky) =====
+    var izoInfoBtn = document.getElementById('calc-izolatie-info-btn');
+    var izoInfoPanel = document.getElementById('calc-izolatie-info');
+    if (izoInfoBtn && izoInfoPanel) {
+      // Click = sticky (ramane deschis pana la urmatorul click)
+      izoInfoBtn.addEventListener('click', function() {
+        var open = izoInfoPanel.classList.toggle('open');
+        izoInfoBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        izoInfoBtn.classList.toggle('is-active', open);
+      });
+      // Hover = temporar (se inchide la mouseleave, doar daca nu e deja sticky)
+      izoInfoBtn.addEventListener('mouseenter', function() {
+        if (!izoInfoPanel.classList.contains('open')) {
+          izoInfoPanel.classList.add('hover');
+        }
+      });
+      izoInfoBtn.addEventListener('mouseleave', function() {
+        izoInfoPanel.classList.remove('hover');
+      });
     }
 
     // ===== QUIZ TEASER =====
