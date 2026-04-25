@@ -1358,6 +1358,7 @@ section {
   display: flex;
   gap: 10px;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-bottom: 48px;
 }
@@ -1380,6 +1381,51 @@ section {
   border-color: #E8732A;
   color: #E8732A;
   background: #FFF2E8;
+}
+
+/* Butoane filter pe 3 niveluri (Pompe aer-apa / aer-aer) */
+.filter-btn.filter-btn-tall {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: 18px;
+  line-height: 1.15;
+  gap: 1px;
+  text-align: center;
+}
+
+.filter-btn-tall .filter-main {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.filter-btn-tall .filter-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #A0672A;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.filter-btn-tall .filter-hint {
+  font-size: 0.66rem;
+  font-weight: 400;
+  color: #B0A89E;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.filter-btn-tall:hover .filter-sub,
+.filter-btn-tall.active .filter-sub {
+  color: #E8732A;
+}
+
+.filter-btn-tall:hover .filter-hint,
+.filter-btn-tall.active .filter-hint {
+  color: #C4A582;
 }
 
 .catalog-grid {

@@ -43,8 +43,16 @@
         <button class="filter-btn active" onclick="filterCatalog('toate', this)">Toate produsele</button>
         <button class="filter-btn" onclick="filterCatalog('lemne', this)">Cazane pe lemne</button>
         <button class="filter-btn" onclick="filterCatalog('peleti', this)">Cazane pe peleti</button>
-        <button class="filter-btn" onclick="filterCatalog('pompe', this)">Pompe de caldura</button>
-        <button class="filter-btn" onclick="filterCatalog('climatizare', this)">Climatizare</button>
+        <button class="filter-btn filter-btn-tall" onclick="filterCatalog('pompe', this)">
+          <span class="filter-main">Pompe de căldură</span>
+          <span class="filter-sub">aer-apă</span>
+          <span class="filter-hint">Încălzire</span>
+        </button>
+        <button class="filter-btn filter-btn-tall" onclick="filterCatalog('climatizare', this)">
+          <span class="filter-main">Pompe de căldură</span>
+          <span class="filter-sub">aer-aer</span>
+          <span class="filter-hint">Climatizare</span>
+        </button>
         <button class="filter-btn" onclick="filterCatalog('ac-split', this)">AC Split Perete</button>
         <button class="filter-btn" onclick="filterCatalog('ac-speciale', this)">AC Tipuri Speciale</button>
         <button class="filter-btn" onclick="filterCatalog('boilere', this)">Boilere &amp; Puffere</button>
