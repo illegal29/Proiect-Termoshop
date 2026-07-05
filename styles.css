@@ -380,7 +380,48 @@ section {
   color: #636E72;
 }
 
-/* ===== Social Proof / Branduri ===== */
+/* ===== Hero Intro Strip ===== */
+.hero-intro {
+  background: linear-gradient(135deg, #2D3436 0%, #3d4f51 100%);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 48px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-intro::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(232, 115, 42, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-intro h1 {
+  color: #FFFFFF;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.hero-intro h1 span {
+  color: #E8732A;
+}
+
+.hero-intro p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 300;
+  margin: 0;
+}
+
 /* ===== Social Media Section ===== */
 .social-media {
   background-color: #FFF8F0;
@@ -1347,6 +1388,10 @@ section {
     align-items: center;
   }
 
+  .hero-intro h1 {
+    font-size: 1.6rem;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1719,6 +1764,7 @@ section {
   font-size: 1.05rem;
   margin-bottom: 28px;
 }
+
 
 /* ===== Calculator card ===== */
 .calc-card {
@@ -2295,12 +2341,36 @@ section {
   left: 0;
   right: 0;
   z-index: 10;
-  background: rgba(232, 115, 42, 0.98);
+  background: #E8732A;
   padding: 14px 16px;
   text-align: center;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
+/* =====================================================
+   POZITIA BENZII PORTOCALII — ajusteaza doar numarul
+   de dupa "bottom:" pentru fiecare reel in parte.
+   78px = sus  /  20px = jos  /  0px = chiar la margine
+   ===================================================== */
+.reel-slide[data-idx="0"]  .reel-overlay { bottom: 78px; } /* Reel 1  */
+.reel-slide[data-idx="1"]  .reel-overlay { bottom: 31px; } /* Reel 2  */
+.reel-slide[data-idx="2"]  .reel-overlay { bottom: 78px; } /* Reel 3  */
+.reel-slide[data-idx="3"]  .reel-overlay { bottom: 78px; } /* Reel 4  */
+.reel-slide[data-idx="4"]  .reel-overlay { bottom: 68px; } /* Reel 5  */
+.reel-slide[data-idx="5"]  .reel-overlay { bottom: 40px; } /* Reel 6  */
+.reel-slide[data-idx="6"]  .reel-overlay { bottom: 78px; } /* Reel 7  */
+.reel-slide[data-idx="7"]  .reel-overlay { bottom: 78px; } /* Reel 8  */
+.reel-slide[data-idx="8"]  .reel-overlay { bottom: 78px; } /* Reel 9  */
+.reel-slide[data-idx="9"]  .reel-overlay { bottom: 78px; } /* Reel 10 */
+.reel-slide[data-idx="10"] .reel-overlay { bottom: 78px; } /* Reel 11 */
+.reel-slide[data-idx="11"] .reel-overlay { bottom: 78px; } /* Reel 12 */
+.reel-slide[data-idx="12"] .reel-overlay { bottom: 78px; } /* Reel 13 */
+.reel-slide[data-idx="13"] .reel-overlay { bottom: 78px; } /* Reel 14 */
+.reel-slide[data-idx="14"] .reel-overlay { bottom: 78px; } /* Reel 15 */
+.reel-slide[data-idx="15"] .reel-overlay { bottom: 74px; } /* Reel 16 */
+.reel-slide[data-idx="16"] .reel-overlay { bottom: 78px; } /* Reel 17 */
+.reel-slide[data-idx="17"] .reel-overlay { bottom: 78px; } /* Reel 18 */
 
 .reel-slide .reel-overlay span {
   color: #FFFFFF;
@@ -2371,6 +2441,16 @@ section {
 
 .reels-arrow-left { left: 0; }
 .reels-arrow-right { right: 0; }
+
+/* Contor reel curent */
+.reels-counter {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #E8732A;
+  margin-top: 12px;
+  letter-spacing: 0.05em;
+}
 
 /* Indicatori (dots) */
 .reels-dots {

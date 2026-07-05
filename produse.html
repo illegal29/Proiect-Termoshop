@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
@@ -53,8 +53,6 @@
           <span class="filter-sub">aer-aer</span>
           <span class="filter-hint">Climatizare</span>
         </button>
-        <button class="filter-btn" onclick="filterCatalog('ac-split', this)">AC Split Perete</button>
-        <button class="filter-btn" onclick="filterCatalog('ac-speciale', this)">AC Tipuri Speciale</button>
         <button class="filter-btn" onclick="filterCatalog('boilere', this)">Boilere &amp; Puffere</button>
         <button class="filter-btn" onclick="filterCatalog('calorifere', this)">Calorifere</button>
         <button class="filter-btn" onclick="filterCatalog('pardoseala', this)">Incalzire pardoseala</button>
@@ -180,7 +178,7 @@
         <!-- ===== SUNSYSTEM (brand card) ===== -->
         <div class="catalog-card" data-cat="pompe">
           <!-- TODO: adauga src imagine produs de pe termoshop.ro -->
-          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="Pompe de Caldura Sunsystem" loading="lazy" style="background:#FFF8F0;">
+          <div style="width:100%;height:200px;display:flex;background:#FFF8F0;overflow:hidden;"><img src="Images/Pompa%20de%20caldura%20Sunsystem.png" alt="Sunsystem 6-13 kW" loading="lazy" style="width:50%;height:100%;object-fit:contain;padding:8px;border-right:1px solid #F0E0CC;"><img src="Images/Pompa%20de%20caldura%20Sunsystem%2016%2B%20kw.png" alt="Sunsystem 16+ kW" loading="lazy" style="width:50%;height:100%;object-fit:contain;padding:8px;"></div>
           <div class="catalog-card-body">
             <span class="catalog-card-brand">Sunsystem</span>
             <h3 class="catalog-card-title">Pompe de Căldură Sunsystem</h3>
@@ -200,7 +198,7 @@
         <!-- ===== TERMOSHOP R290 (brand card) ===== -->
         <div class="catalog-card" data-cat="pompe">
           <!-- TODO: adauga src imagine produs de pe termoshop.ro -->
-          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="Pompa de Caldura Termoshop R290" loading="lazy" style="background:#FFF8F0;">
+          <img class="catalog-card-image" src="Images/Pompa%20de%20caldura%20R290.png" alt="Pompa de Caldura Termoshop R290" loading="lazy" style="background:#FFF8F0;">
           <div class="catalog-card-body">
             <span class="catalog-card-brand">Termoshop</span>
             <h3 class="catalog-card-title">Pompă de Căldură R290</h3>
@@ -218,8 +216,8 @@
         </div>
 
         <!-- ===== ROTENSO — AC SPLIT PERETE ===== -->
-        <div class="catalog-card" data-cat="climatizare ac-split">
-          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="AC Split Perete Rotenso" loading="lazy" style="background:#FFF8F0;">
+        <div class="catalog-card" data-cat="climatizare">
+          <img class="catalog-card-image" src="Images/Rotenso%20Jato%20X.png" alt="AC Split Perete Rotenso" loading="lazy" style="background:#FFF8F0;">
           <div class="catalog-card-body">
             <span class="catalog-card-brand">Rotenso</span>
             <h3 class="catalog-card-title">AC Split de Perete</h3>
@@ -238,8 +236,8 @@
         </div>
 
         <!-- ===== ROTENSO — AC TIPURI SPECIALE ===== -->
-        <div class="catalog-card" data-cat="climatizare ac-speciale">
-          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="AC Tipuri Speciale Rotenso" loading="lazy" style="background:#FFF8F0;">
+        <div class="catalog-card" data-cat="climatizare">
+          <img class="catalog-card-image" src="Images/Rotenso%20Tenji%20CC.png" alt="AC Tipuri Speciale Rotenso" loading="lazy" style="background:#FFF8F0;">
           <div class="catalog-card-body">
             <span class="catalog-card-brand">Rotenso</span>
             <h3 class="catalog-card-title">AC Tipuri Speciale</h3>
@@ -259,7 +257,7 @@
 
         <!-- ===== BOILERE TERMOELECTRICE ===== -->
         <div class="catalog-card" data-cat="boilere">
-          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="Boilere Termoelectrice Sunsystem" loading="lazy" style="background:#FFF8F0;">
+          <img class="catalog-card-image" src="Images/Boiler%20termoelectric%20sunsystem%20MB-L.png" alt="Boilere Termoelectrice Sunsystem" loading="lazy" style="background:#FFF8F0;">
           <div class="catalog-card-body">
             <span class="catalog-card-brand">Sunsystem &amp; Ferroli</span>
             <h3 class="catalog-card-title">Boilere Termoelectrice</h3>
@@ -446,7 +444,7 @@
 
         <!-- ===== PUFFERE ===== -->
         <div class="catalog-card" data-cat="boilere">
-          <img class="catalog-card-image" src="https://termoshop.ro/wp-content/themes/kapee/assets/images/transparent.png" alt="Puffere Acumulatoare Sunsystem" loading="lazy" style="background:#FFF8F0;">
+          <img class="catalog-card-image" src="Images/puffer%20SWPN.jpg" alt="Puffere Acumulatoare Sunsystem" loading="lazy" style="background:#FFF8F0;">
           <div class="catalog-card-body">
             <span class="catalog-card-brand">Sunsystem</span>
             <h3 class="catalog-card-title">Puffere &amp; Acumulatoare</h3>
